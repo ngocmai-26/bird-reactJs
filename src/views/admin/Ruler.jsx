@@ -1,9 +1,9 @@
-import { HeaderAdmin, NavAdmin } from "../layout/admin/AdminLayout";
+import AdminLayout, { HeaderAdmin, NavAdmin } from "../layout/admin/AdminLayout";
 
-function RulerAdmin() {
+function Ruler() {
   return (
-   
-        <section>
+   <AdminLayout>
+      <section>
           <div className="content">
             <div className="content__header">
               <div className="content__header--title">
@@ -46,7 +46,9 @@ function RulerAdmin() {
             </div>
           </div>
         </section>
+   </AdminLayout>
+        
   );
 }
 
-export default RulerAdmin;
+export default Ruler;

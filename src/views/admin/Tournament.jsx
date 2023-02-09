@@ -1,8 +1,8 @@
-import { HeaderAdmin, NavAdmin, Search } from "../layout/admin/AdminLayout";
+import AdminLayout, { HeaderAdmin, NavAdmin, Search } from "../layout/admin/AdminLayout";
 
 function Tournament() {
   return (
-    <>
+    <AdminLayout>
       <section>
         <div className="content">
           <div className="content__header">
@@ -214,7 +214,7 @@ function Tournament() {
           </div>
         </div>
       </section>
-    </>
+    </AdminLayout>
   );
 }
 

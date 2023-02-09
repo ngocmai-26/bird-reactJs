@@ -3,11 +3,10 @@ import "../../../core/components/css/AdminLayout.css";
 
 import logo from "../../../assets/img/admin/logo_bird.png";
 import avatar from "../../../assets/img/admin/avatar_admin.png";
-import { Link } from "react-router-dom";
-
+import { Link, Outlet ,useNavigate} from "react-router-dom";
+import {useLayoutEffect} from  'react'
 export function HeaderAdmin() {
   return (
-    <>
       <header className="header">
         <div className="header__group">
           <div className="row header__group--list">
@@ -24,13 +23,11 @@ export function HeaderAdmin() {
           </div>
         </div>
       </header>
-    </>
   );
 }
 
 export function NavAdmin() {
   return (
-    <>
       <div className="col-xl-3 col-md-3 col-0 nav">
         <nav className="nav__group">
           <div className="nav--logo">
@@ -82,10 +79,30 @@ export function NavAdmin() {
           </div>
         </nav>
       </div>
-    </>
   );
 }
-
+const AdminLayout = (props)=>{
+  const navigate = useNavigate()
+  const user = {
+    rule:"admin"
+  }
+  useLayoutEffect(()=>{
+    //check rule here
+    // neu la admin 
+    if(user.rule !== "admin"){
+      navigate("/Home")
+    }
+  },[])
+  return (
+      <div className="row">
+          <NavAdmin />
+          <div className="col-xl-9 col-md-9 tournament">
+              <HeaderAdmin />
+              {props.children}
+          </div>
+      </div>
+  )
+}
 export function Search() {
   return (
     <div className="content__search">
@@ -104,3 +121,4 @@ export function Search() {
     </div>
   );
 }
+export default AdminLayout;
