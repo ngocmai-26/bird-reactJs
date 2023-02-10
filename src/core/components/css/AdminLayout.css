@@ -1,0 +1,255 @@
+/***************Header*****************/
+.header__group {
+    height: 70px;
+    padding: 15px 0;
+}
+
+.header__group--list {
+    justify-content: end;
+    font-size: 22px;
+}
+
+.header__group--item {
+    display: flex;
+    align-items: center;
+}
+
+.icon-notify {
+    justify-content: end;
+    position: relative;
+}
+
+.icon-user {
+    justify-content: center;
+}
+
+.dots-red {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #c1251c;
+    position: absolute;
+    top: 12px;
+    right: 10px;
+}
+
+.account-img {
+    width: 50px;
+    height: 50px;
+}
+
+/**************Navbar*************/
+
+.nav {
+    
+    background-color: #fafafa;
+    min-height: 100vh;
+}
+
+.nav__group {
+    width: 320px;
+    height: 100%;
+    border-right: 1px solid #efefef;
+    background-color: #fdfdfd;
+    padding: 25px;
+}
+
+.nav--logo {
+    width: 100%;
+}
+
+.menu {
+    padding: 55px 10px;
+}
+
+.menu .menu--title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.menu__list {
+    padding: 20px 0;
+}
+
+.menu__list--item {
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.menu__list--item-link {
+    color: var(--color-primary);
+}
+
+.active {
+    background-color: var(--color-primary);
+    border-radius: 6px;
+}
+
+.active .menu__list--item-link {
+    color: #F7FBFE;
+}
+
+
+/************content*************/
+
+.content {
+    padding: 30px 40px;
+    width: 90%;
+}
+
+.content__header {
+    padding: 15px 0;
+}
+
+.content__header--title .content__header--title-text {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.btn-create {
+    width: 100%;
+    background-color: var(--color-primary);
+    color: #F7FBFE;
+    border: 0;
+    padding: 5px 0;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+
+.content__body {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px #f2f2f2, -1px -1px 5px #f2f2f2, 1px -1px 5px #f2f2f2, -1px 1px 5px #f2f2f2;
+}
+
+.content__search {
+    position: relative;
+    text-align: end;
+}
+
+.content__search--input {
+    height: 40px;
+    width: 300px;
+    padding: 0 12px;
+    border-radius: 3px;
+    font-size: 16px;
+    border: 1px solid #777777;
+    transition: 0.25s ease;
+}
+
+.content__search--label {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.25s ease;
+    display: none;
+    color: var(--color-primary);
+    font-size: 12px;
+}
+
+.contact__form:nth-child(4) .content__search--input {
+    height: 160px;
+    padding: 28px 24px;
+}
+
+.contact__form:nth-child(4) .content__search--label {
+    top: 28px;
+}
+
+.content__search--input:focus+.content__search--label {
+    top: 0;
+    right: 235px;
+    padding: 0 10px;
+    display: inline-block;
+    background-color: #fff;
+}
+
+.content__search--input:focus+.content__search--label {
+    color: var(--color-primary);
+}
+
+.content__search--input:focus {
+    border-color: var(--color-primary);
+    outline: var(--color-primary);
+}
+
+.icon--search {
+    position: absolute;
+    top: 7px;
+    left: 270px;
+    color: var(--color-primary);
+    font-weight: 600;
+    display: none;
+}
+
+.content__search--input:focus-visible .content__search--label,
+.content__search--input:focus-visible+.icon--search {
+    display: block;
+}
+
+.content__table {
+    padding: 20px 0;
+}
+
+.table__content {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: end;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.table__content td,
+.table__content th {
+    border-bottom: 1px solid #f2f2f2;
+    padding: 8px;
+}
+
+
+.table__content th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--color-primary);
+    color: white;
+    text-align: end;
+}
+
+
+table  tbody {
+    height: 50px !important;
+    overflow :hidden;
+}
+
+
+/**********Rule********************/
+.heading {
+    padding: 5px 0;
+}
+.heading1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.heading2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.heading3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.content-text {
+    font-size: 14px;
+}
