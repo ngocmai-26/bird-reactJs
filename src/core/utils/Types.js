@@ -6,8 +6,13 @@ export function UserModel(username,email,password,id){
     this.password = password;
     this.id = id;
 }
-
-const new_user = new UserModel();
+export function ClientNav(id,title,to,params = {}){
+   this.id = id;
+   this.title = title;
+   this.to = to;
+   this.params = params;
+}
+// const new_user = new UserModel();
 
 //model mapper => hung data tu api reps => type object
 
