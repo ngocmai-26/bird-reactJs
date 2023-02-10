@@ -4,8 +4,9 @@ import "../../../core/components/css/AdminLayout.css";
 import logo from "../../../assets/img/admin/logo_bird.png";
 import avatar from "../../../assets/img/admin/avatar_admin.png";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { AdminNav } from "../../../core/utils/Types";
 export function HeaderAdmin() {
   return (
     <header className="header">
@@ -27,7 +28,7 @@ export function HeaderAdmin() {
   );
 }
 
-export function NavAdmin() {
+export function NavAdmin({links,active,handleSetActive}) {
   return (
     <div className="col-xl-3 col-md-3 col-0 nav">
       <nav className="nav__group">
@@ -36,59 +37,26 @@ export function NavAdmin() {
         </div>
 
         <div className="menu">
-          <div className="menu__general">
-            <div className="menu--title">GENERAL</div>
-            <ul className="menu__list">
-              <li className="menu__list--item active text__list--style">
-                <Link to="/Admin" className="text-link menu__list--item-link">
-                  Danh sách giải đấu
-                </Link>
-              </li>
-              <li className="menu__list--item text__list--style">
-                <Link
-                  to="/Admin/Match"
-                  className="text-link menu__list--item-link"
-                >
-                  Danh sách trận đấu
-                </Link>
-              </li>
-              <li className="menu__list--item text__list--style">
-                <Link
-                  to="/Admin/Birds"
-                  className="text-link menu__list--item-link"
-                >
-                  Danh sách Bird
-                </Link>
-              </li>
-              <li className="menu__list--item text__list--style">
-                <Link
-                  to="/Admin/Users"
-                  className="text-link menu__list--item-link"
-                >
-                  Danh sách User
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="menu__configuration">
-            <div className="menu--title">CONFIGURATION</div>
-            <ul className="menu__list">
-              <li className="menu__list--item text__list--style">
-                <Link
-                  to="/Admin/Ruler"
-                  className="text-link menu__list--item-link"
-                >
-                  Điều luật
-                </Link>
-              </li>
-              <li className="menu__list--item text__list--style">
-                <a href="#" className="text-link menu__list--item-link">
-                  Cài đặt hệ thống
-                </a>
-              </li>
-            </ul>
-          </div>
+          {links.map((parent,index)=>{
+              return (
+                <div key={parent?.id} className="menu__general">
+                  <div className="menu--title">{parent?.title}</div>
+                  <ul className="menu__list">
+                      {parent?.children.length > 0 && 
+                        parent?.children.map((val)=>{
+                          return (
+                            <li key={val?.id} onClick={()=>{handleSetActive(val?.id)}} className={`menu__list--item ${active === val.id ? 'active' : ''} text__list--style`}>
+                              <Link key={val?.id} to={val.to} className="text-link menu__list--item-link">
+                                {val?.title}
+                              </Link>
+                            </li>
+                          )
+                        })
+                      }
+                  </ul>
+                </div>
+              )
+          })}
         </div>
       </nav>
     </div>
@@ -106,9 +74,31 @@ const AdminLayout = (props) => {
       navigate("/Home");
     }
   }, []);
+  const links = [
+    new AdminNav(1,"General","",[],
+      [
+        new AdminNav(2,"Danh sách giải đấu","/Admin",[],[]),
+        new AdminNav(3,"Danh sách trận đấu","/Admin/Match",[],[]),
+        new AdminNav(4,"Danh sách Bird","/Admin/Birds",[],[]),
+        new AdminNav(5,"Danh sách User","/Admin/Users",[],[])
+      ]
+    ),
+    new AdminNav(6,"CONFIGURATION","",[],[
+      new AdminNav(7,"Điều luật","/Admin/Ruler",[],[]),
+      new AdminNav(8,"Cài đặt hệ thống","",[],[])
+    ])
+  ]
+  const [active,setActive] = useState(0)
+  const handleSetActive = (id)=>{
+    console.log(id)
+    setActive(id)
+  }
+  useLayoutEffect(()=>{
+    console.log(active)
+  },[active])
   return (
     <div className="row">
-      <NavAdmin />
+      <NavAdmin links={links} active={active} handleSetActive={handleSetActive}/>
       <div className="col-xl-9 col-md-9 tournament">
         <HeaderAdmin />
         {props.children}
