@@ -1,53 +1,55 @@
-import AdminLayout, { HeaderAdmin, NavAdmin } from "../layout/admin/AdminLayout";
+import AdminLayout, {
+  HeaderAdmin,
+  NavAdmin,
+  Search,
+  TableContent,
+} from "../layout/admin/AdminLayout";
 
 function Ruler() {
   return (
-   <AdminLayout>
+    <AdminLayout>
       <section>
-          <div className="content">
-            <div className="content__header">
-              <div className="content__header--title">
-                <span className="content__header--title-text">Rule Detail</span>
-              </div>
-            </div>
-            <div className="content__body">
-              <div className="content__body--group">
-                <div className="heading1 heading">
-                  <span>Heading1</span>
-                </div>
-                <div className="heading2 heading">
-                  <span>Heading2</span>
-                </div>
-                <div className="heading3 heading">
-                  <span>Heading3</span>
-                </div>
-                <div className="heading1 heading">
-                  <span>Heading1</span>
-                </div>
-                <div className="content-text">
-                  <span>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Quis lobortis nisl cursus bibendum sit nulla accumsan
-                    sodales ornare. At urna viverra non suspendisse neque,
-                    lorem. Pretium condimentum pellentesque gravida id etiam sit
-                    sed arcu euismod. Rhoncus proin orci duis scelerisque
-                    molestie cursus tincidunt aliquam.
-                  </span>
-                  <span>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Quis lobortis nisl cursus bibendum sit nulla accumsan
-                    sodales ornare. At urna viverra non suspendisse neque,
-                    lorem. Pretium condimentum pellentesque gravida id etiam sit
-                    sed arcu euismod. Rhoncus proin orci duis scelerisque
-                    molestie cursus tincidunt aliquam.
-                  </span>
-                </div>
+        <div className="content">
+          <div className="content__header">
+            <div className="row">
+              <div className="col-xl-12 col-md-12 content__header--title">
+                <span className="content__header--title-text">
+                  Danh sách trận đấu
+                </span>
               </div>
             </div>
           </div>
-        </section>
-   </AdminLayout>
-        
+
+          <div className="content__body">
+            <div className="content__body--group">
+              <div className="row">
+                <div className="col-xl-8">
+                  <div className="content__search">
+                    <input
+                      type="text"
+                      name="Search"
+                      placeholder="Search"
+                      className="content__search--input"
+                    />
+                    <label htmlFor="Search" className="content__search--label">
+                      Keyword
+                    </label>
+                    <div className="icon--search">
+                      <i className="fa-solid fa-chevron-down"></i>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-xl-4 search__ruler">
+                  <Search />
+                </div>
+              </div>
+
+              <TableContent />
+            </div>
+          </div>
+        </div>
+      </section>
+    </AdminLayout>
   );
 }
 

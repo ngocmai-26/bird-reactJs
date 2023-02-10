@@ -1,6 +1,6 @@
-import AdminLayout, { HeaderAdmin, NavAdmin, Search, TableContent } from "../layout/admin/AdminLayout";
+import AdminLayout, { Search, TableContent } from "../layout/admin/AdminLayout";
 
-function Match() {
+function Birds() {
   return (
     <AdminLayout>
       <section>
@@ -17,11 +17,12 @@ function Match() {
 
           <div className="content__body">
             <div className="content__body--group">
-            <div className="row content__body--search">
+              <div className="row content__body--search">
                 <div className="col-xl-4">
                   <Search />
                 </div>
               </div>
+              
               <TableContent />
             </div>
           </div>
@@ -31,4 +32,4 @@ function Match() {
   );
 }
 
-export default Match;
+export default Birds;
