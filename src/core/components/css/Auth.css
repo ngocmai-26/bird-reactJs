@@ -1,0 +1,26 @@
+.bg{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.auth-bg{
+    /* background-image: url(../../../assets/img/client/login-bg.png); */
+}
+.main-bg {
+    background-image: url(../../../assets/img/client/login-bg-2.png);
+}
+.input:focus{
+    box-shadow: none!important;
+}
+.input{
+    background-color: transparent;
+    width: 200%;
+    border: none;
+}
+.w-50-resp{
+    width: 44%;
+}
+@media (max-width:576px){
+    .w-50-resp{width: 80%;}
+
+}

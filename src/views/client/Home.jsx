@@ -87,6 +87,7 @@ const Footer = (props)=>{
                 <img src={footerImg} width={"100%"} style={{objectFit:"cover",margin:"auto"}} height={"100%"}/>
             </div>
             <div className="my-5"></div>
+            <div className="py-5"></div>
         </div>
     )
 }
