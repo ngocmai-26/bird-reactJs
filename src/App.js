@@ -10,6 +10,7 @@ import { USER_LOGIN_KEY } from './core/utils/Contains';
 import authModel from './models/AuthModel';
 import AuthRouter from './core/navs/Client/AuthRouter';
 import ClientRouter from './core/navs/Client/ClientRouter';
+import RouterAdmin from './core/navs/Admin/RouterAdmin';
 function App() {
   // cookies 
     // check login 
@@ -28,11 +29,12 @@ function App() {
   ///
   return (
     <>
-      {authModel.isLogin ? 
+      {/* {authModel.isLogin ? 
         <ClientRouter></ClientRouter>
         :
         <AuthRouter/>
-      }
+      } */}
+      <RouterAdmin />
     </>
     
   );

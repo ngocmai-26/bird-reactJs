@@ -1,4 +1,9 @@
-import AdminLayout, { HeaderAdmin, NavAdmin, Search } from "../layout/admin/AdminLayout";
+import AdminLayout, {
+  HeaderAdmin,
+  NavAdmin,
+  Search,
+  TableContent,
+} from "../layout/admin/AdminLayout";
 
 function Tournament() {
   return (
@@ -22,194 +27,13 @@ function Tournament() {
 
           <div className="content__body">
             <div className="content__body--group">
-              <Search />
-
-              <div className="content__table">
-                <table className="table__content">
-                  <thead>
-                    <tr>
-                      <th>Header</th>
-                      <th>Header</th>
-                      <th>Header</th>
-                      <th>Header</th>
-                      <th>Header</th>
-                      <th>Header</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-
-                    <tr>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                      <td>Text</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div className="row content__body--search">
+                <div className="col-xl-4">
+                  <Search />
+                </div>
               </div>
+
+              <TableContent />
             </div>
           </div>
         </div>
