@@ -13,6 +13,7 @@ import Overview from '../../views/admin/Overview'
 import MatchDetail from '../../views/admin/MatchDetail'
 import CreateTour from '../../views/admin/CreateTour'
 import UserDetail from '../../views/admin/UserDetail'
+import Setting from '../../views/admin/Setting'
 
 const ClientRouter = (props)=>{
     return (
@@ -33,6 +34,7 @@ const ClientRouter = (props)=>{
                 <Route path="/Admin/CreateTour" element={<CreateTour />}/>
                 <Route path="/Admin/UserDetail" element={<UserDetail />}/>
                 <Route path="/Admin/MatchDetail" element={<MatchDetail />}/>
+                <Route path="/Admin/Settings" element={<Setting />}/>
             </Routes>
       </BrowserRouter>
     )
