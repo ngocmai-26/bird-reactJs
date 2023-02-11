@@ -2,6 +2,7 @@ import { makeAutoObservable } from "mobx";
 import { AdminNav } from "../core/utils/Types";
 class AdminNavModel {
     active
+    // huong dan su dung : sau nay co them nav thi them o day va them ben routes la xong khong duoc sua cau truc gi ca nhe. no se tu gen ra nav
     links = [
         new AdminNav(1,"General","",[],
             [
