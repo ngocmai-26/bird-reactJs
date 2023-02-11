@@ -43,7 +43,6 @@ function Ruler() {
                   <Search />
                 </div>
               </div>
-
               <TableContent />
             </div>
           </div>
