@@ -11,6 +11,7 @@ import authModel from './models/AuthModel';
 import AuthRouter from './core/navs/Client/AuthRouter';
 import ClientRouter from './core/navs/Client/ClientRouter';
 import RouterAdmin from './core/navs/Admin/RouterAdmin';
+import UserRouter from './core/navs/User/UserRouter';
 function App() {
   // cookies 
     // check login 
@@ -34,7 +35,7 @@ function App() {
         :
         <AuthRouter/>
       } */}
-      <RouterAdmin />
+      <UserRouter />
     </>
     
   );

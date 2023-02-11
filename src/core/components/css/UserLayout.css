@@ -1,0 +1,92 @@
+.content__bodyAccount--item {
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 1px 1px 5px #f2f2f2, -1px -1px 5px #f2f2f2, 1px -1px 5px #f2f2f2, -1px 1px 5px #f2f2f2;
+    border-radius: 10px;
+    padding-bottom: 0;
+    margin: 20px 0;
+}
+
+.account__Userinfo--name {
+    padding: 10px 0;
+}
+
+.text--number {
+    font-size: 40px;
+    font-weight: 500;
+    text-align: end;
+    padding: 5px;
+}
+
+.account__Userinfo--parameter--item {
+    width: 150px;
+    border: 2px dashed #7f7e7e;
+    margin: 10px ;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.bodyAccount__MenuList {
+    display: flex;
+    padding: 15px 0;
+    margin-bottom: 0;
+}
+
+.bodyAccount__MenuList--item {
+    list-style: none;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.bodyAccount__MenuList--item:hover {
+    color: #818080;
+}
+
+.bodyAccount__MenuList--item .text-hr {
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+}
+
+.updateAccount {
+    text-align: end;
+}
+
+.btn--updateAccount {
+    padding: 0 12px;
+    border: 1px solid #dddcdc;
+    background-color: #dddcdc;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn--updateAccount:hover {
+    background-color: #d2d2d2;
+
+}
+
+.information--item {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 0;
+}
+
+.content__bodyAccount--item-text {
+    padding-bottom: 20px;
+
+}
+
+.securityChange {
+    background-color: #e7e7e7;
+    width: 300px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.changeDisplay {
+    display: none;
+}

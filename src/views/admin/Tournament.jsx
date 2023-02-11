@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AdminLayout, {
   HeaderAdmin,
   NavAdmin,
@@ -18,9 +19,9 @@ function Tournament() {
                 </span>
               </div>
               <div className="col-xl-3 col-md-5">
-                <div className="content__create">
+                <Link to="/Admin/CreateTour" className="content__create">
                   <button className="btn-create">Create a new one</button>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

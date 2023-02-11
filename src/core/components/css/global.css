@@ -46,3 +46,17 @@ span {
     font-weight: 600;
     font-size: 14px;
 }
+
+.text--heading {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.text--heading-bold {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.text-hr {
+    border-bottom:  2px solid #727171;
+}

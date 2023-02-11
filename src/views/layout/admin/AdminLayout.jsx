@@ -40,7 +40,7 @@ export function NavAdmin() {
             <div className="menu--title">GENERAL</div>
             <ul className="menu__list">
               <li className="menu__list--item active text__list--style">
-                <Link to="/Admin" className="text-link menu__list--item-link">
+                <Link to="/Admin" className="text-link active menu__list--item-link">
                   Danh sách giải đấu
                 </Link>
               </li>
@@ -123,9 +123,9 @@ export function HorizonNavbar() {
       <Navbar bg="light" variant="light">
         <Container>
           <Nav className="me-auto">
-            <Nav.Link href="#Overview">Overview</Nav.Link>
-            <Nav.Link href="#Matches">Matches</Nav.Link>
-            <Nav.Link href="#Results">Results</Nav.Link>
+            <Nav.Link to="/Admin/Overview">Overview</Nav.Link>
+            <Nav.Link to="/Admin/Brackets">Matches</Nav.Link>
+            <Nav.Link to="">Results</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
