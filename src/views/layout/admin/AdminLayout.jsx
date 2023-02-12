@@ -47,9 +47,9 @@ export function HorizonNavbar() {
       <Navbar bg="light" variant="light">
         <Container>
           <Nav className="me-auto">
-            <Nav.Link href="#Overview">Overview</Nav.Link>
-            <Nav.Link href="#Matches">Matches</Nav.Link>
-            <Nav.Link href="#Results">Results</Nav.Link>
+            <Nav.Link to="/Admin/Overview">Overview</Nav.Link>
+            <Nav.Link to="/Admin/Brackets">Matches</Nav.Link>
+            <Nav.Link to="">Results</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
