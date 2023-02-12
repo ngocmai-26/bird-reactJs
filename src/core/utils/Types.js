@@ -19,10 +19,6 @@ export function AdminNav(id,title,to,params,children){
     this.params = params;
     this.children = children;
 }
-// const new_user = new UserModel();
 
-//model mapper => hung data tu api reps => type object
-
-// api => json type 
 
 

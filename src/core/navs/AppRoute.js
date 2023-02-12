@@ -14,7 +14,9 @@ import MatchDetail from '../../views/admin/MatchDetail'
 import CreateTour from '../../views/admin/CreateTour'
 import UserDetail from '../../views/admin/UserDetail'
 import Setting from '../../views/admin/Setting'
-
+import AccountInfo from '../../views/user/AccountInfo'
+import BirdList from '../../views/user/BirdList'
+import BirdRegister from '../../views/user/BirdRegister'
 const ClientRouter = (props)=>{
     return (
         <BrowserRouter>
@@ -23,6 +25,11 @@ const ClientRouter = (props)=>{
                 <Route path="/Login" element={<Login />} />
                 <Route path="/Register" element={<Register />} />
               
+
+                <Route path="/AccountInfo" element={<AccountInfo />} />
+                <Route path="/BirdList" element={<BirdList />} />
+                <Route path="/BirdRegister" element={<BirdRegister />} />
+
                 <Route path="/Admin" element={<Tournament />} />
                 <Route path="/Admin/Match" element={<Match />} />
                 <Route path="/Admin/Ruler" element={<RulerAdmin />}/>
