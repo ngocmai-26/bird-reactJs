@@ -1,5 +1,4 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import {ClientNav} from "../../../core/utils/Types";
 import {Container, Nav, Navbar} from "react-bootstrap";
 import logo from '../../../assets/img/admin/logo_bird.png'
 import {Link} from "react-router-dom";
