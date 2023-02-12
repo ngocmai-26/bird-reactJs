@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import userNavModel from "../../../models/UserNavModel";
 
+
 export function NavUser() {
   return (
     <div className="col-xl-3 col-md-3 col-0 nav">
@@ -36,7 +37,6 @@ export function NavUser() {
               </div>
             )
           })}
-          
         </div>
       </nav>
     </div>
@@ -88,3 +88,4 @@ const UserLayout = (props) => {
 };
 
 export default observer(UserLayout);
+
