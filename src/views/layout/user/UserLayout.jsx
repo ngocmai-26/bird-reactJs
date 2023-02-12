@@ -5,6 +5,10 @@ import logo from "../../../assets/img/admin/logo_bird.png";
 import avatar from "../../../assets/img/admin/avatar_admin.png";
 import { useLayoutEffect } from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+import { observer } from "mobx-react-lite";
+import userNavModel from "../../../models/UserNavModel";
+
 
 export function NavUser() {
   return (
@@ -15,10 +19,24 @@ export function NavUser() {
         </div>
 
         <div className="menu">
-          <div className="menu__general">
-            <div className="menu--title">GENERAL</div>
-            <ul className="menu__list"></ul>
-          </div>
+          {userNavModel.links.map((link,index)=>{
+            return (
+              <div className="menu__general" key={index.toString()}>
+                <div className="menu--title">{link?.title}</div>
+                <ul className="menu__list list-unstyled">
+                  {link.children.length > 0 && link.children.map ((val,index)=>{
+                      return(
+                        <li key={index.toString()} onClick={()=>{userNavModel.setActive(val.id)}} className="w-100 py-1 rounded" style={{backgroundColor:userNavModel.active === val?.id  ? "#AAAAFF" : 'white'}}>
+                        <Link className="nav-link fw-bold py-0" style={{color:"#0F172A",fontSize:"14px"}}>
+                          {val?.title}
+                        </Link>
+                      </li>
+                      )
+                  })} 
+                </ul>
+              </div>
+            )
+          })}
         </div>
       </nav>
     </div>
@@ -69,4 +87,5 @@ const UserLayout = (props) => {
   );
 };
 
-export default UserLayout;
+export default observer(UserLayout);
+
