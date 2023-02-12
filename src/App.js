@@ -8,7 +8,7 @@ import { useLayoutEffect } from 'react';
 import { observer } from 'mobx-react';
 import { USER_LOGIN_KEY } from './core/utils/Contains';
 import AppRouter from './core/navs/AppRoute'
-import UserRouter from './core/navs/User/UserRouter';
+
 function App() {
   // cookies 
     // check login 
@@ -27,7 +27,7 @@ function App() {
   ///
   return (
     <>
-      <UserRouter />
+      <AppRouter />
     </>
     
   );
