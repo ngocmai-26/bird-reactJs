@@ -7,10 +7,7 @@ import './core/components/css/LayoutResponsive.css';
 import { useLayoutEffect } from 'react';
 import { observer } from 'mobx-react';
 import { USER_LOGIN_KEY } from './core/utils/Contains';
-import authModel from './models/AuthModel';
-import AuthRouter from './core/navs/Client/AuthRouter';
-import ClientRouter from './core/navs/Client/ClientRouter';
-import RouterAdmin from './core/navs/Admin/RouterAdmin';
+import AppRouter from './core/navs/AppRoute'
 import UserRouter from './core/navs/User/UserRouter';
 function App() {
   // cookies 
@@ -30,11 +27,6 @@ function App() {
   ///
   return (
     <>
-      {/* {authModel.isLogin ? 
-        <ClientRouter></ClientRouter>
-        :
-        <AuthRouter/>
-      } */}
       <UserRouter />
     </>
     
