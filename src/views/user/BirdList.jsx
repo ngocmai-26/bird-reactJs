@@ -1,6 +1,40 @@
+import classNames from "classnames";
+import { useState } from "react";
 import UserLayout from "../layout/user/UserLayout";
 
 function BirdList() {
+  const [notification, setNotification] = useState({
+    notificationDelete: false,
+    notificationEdit: false,
+    notificationDetail: false,
+  })
+
+  const onNotify = (props) => {
+    if(props === "edit") {
+      setNotification((pre) =>
+      (pre = {
+        ...pre,
+        notificationEdit: !notification.notificationEdit,
+      }),)
+    } else if(props === "delete") {
+      setNotification((pre) =>
+      (pre = {
+        ...pre,
+        notificationDelete: !notification.notificationDelete,
+      }),)
+    } else if(props === "detail") {
+      setNotification((pre) =>
+      (pre = {
+        ...pre,
+        notificationDetail: !notification.notificationDetail,
+      }),)
+    }
+
+    console.log(props)
+  }
+
+  
+
   return (
     <>
       <UserLayout>
@@ -19,9 +53,9 @@ function BirdList() {
               <div className="content__bodyAccount--item ">
                 <div className="row">
                   <div className="col-xl-4 BirdList">
-                    <div className="BirdList__item">
+                    <div className="BirdList__item "  onClick={()=>onNotify("detail")}>
                       <div className="BirdList__item--avatar"></div>
-                      <div className="BirdList__item--info text-heading14">
+                      <div className="BirdList__item--info text-heading14" onClick={()=>onNotify("detail")}>
                         <span>Chào mào A</span>
                       </div>
                     </div>
@@ -29,10 +63,30 @@ function BirdList() {
                     <div className="BirdList__button">
                       <div className="row">
                         <div className="col-xl-6">
-                          <button className="btn--Account">Edit</button>
+                          <button className="btn--Account" onClick={()=>onNotify("edit")}>Edit</button>
                         </div>
                         <div className="col-xl-6">
-                          <button className="btn--Account">Delete</button>
+                          <button className="btn--Account"  onClick={()=>onNotify("delete")}>Delete</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="col-xl-4 BirdList">
+                    <div className="BirdList__item"  onClick={()=>onNotify("detail")}>
+                      <div className="BirdList__item--avatar"></div>
+                      <div className="BirdList__item--info text-heading14" onClick={()=>onNotify("detail")}>
+                        <span>Chào mào A</span>
+                      </div>
+                    </div>
+
+                    <div className="BirdList__button">
+                      <div className="row">
+                        <div className="col-xl-6">
+                          <button className="btn--Account" onClick={()=>onNotify("edit")}>Edit</button>
+                        </div>
+                        <div className="col-xl-6">
+                          <button className="btn--Account" onClick={()=>onNotify("delete")}>Delete</button>
                         </div>
                       </div>
                     </div>
@@ -41,7 +95,7 @@ function BirdList() {
                   <div className="col-xl-4 BirdList">
                     <div className="BirdList__item">
                       <div className="BirdList__item--avatar"></div>
-                      <div className="BirdList__item--info text-heading14">
+                      <div className="BirdList__item--info text-heading14" onClick={()=>onNotify("detail")}>
                         <span>Chào mào A</span>
                       </div>
                     </div>
@@ -49,10 +103,10 @@ function BirdList() {
                     <div className="BirdList__button">
                       <div className="row">
                         <div className="col-xl-6">
-                          <button className="btn--Account">Edit</button>
+                          <button className="btn--Account" onClick={()=>onNotify("edit")}>Edit</button>
                         </div>
                         <div className="col-xl-6">
-                          <button className="btn--Account">Delete</button>
+                          <button className="btn--Account" onClick={()=>onNotify("delete")}>Delete</button>
                         </div>
                       </div>
                     </div>
@@ -61,7 +115,7 @@ function BirdList() {
                   <div className="col-xl-4 BirdList">
                     <div className="BirdList__item">
                       <div className="BirdList__item--avatar"></div>
-                      <div className="BirdList__item--info text-heading14">
+                      <div className="BirdList__item--info text-heading14" onClick={()=>onNotify("detail")}>
                         <span>Chào mào A</span>
                       </div>
                     </div>
@@ -69,10 +123,10 @@ function BirdList() {
                     <div className="BirdList__button">
                       <div className="row">
                         <div className="col-xl-6">
-                          <button className="btn--Account">Edit</button>
+                          <button className="btn--Account" onClick={()=>onNotify("edit")}>Edit</button>
                         </div>
                         <div className="col-xl-6">
-                          <button className="btn--Account">Delete</button>
+                          <button className="btn--Account" onClick={()=>onNotify("delete")}>Delete</button>
                         </div>
                       </div>
                     </div>
@@ -81,7 +135,7 @@ function BirdList() {
                   <div className="col-xl-4 BirdList">
                     <div className="BirdList__item">
                       <div className="BirdList__item--avatar"></div>
-                      <div className="BirdList__item--info text-heading14">
+                      <div className="BirdList__item--info text-heading14" onClick={()=>onNotify("detail")}>
                         <span>Chào mào A</span>
                       </div>
                     </div>
@@ -89,10 +143,10 @@ function BirdList() {
                     <div className="BirdList__button">
                       <div className="row">
                         <div className="col-xl-6">
-                          <button className="btn--Account">Edit</button>
+                          <button className="btn--Account" onClick={()=>onNotify("edit")}>Edit</button>
                         </div>
                         <div className="col-xl-6">
-                          <button className="btn--Account">Delete</button>
+                          <button className="btn--Account" onClick={()=>onNotify("delete")}>Delete</button>
                         </div>
                       </div>
                     </div>
@@ -101,7 +155,7 @@ function BirdList() {
                   <div className="col-xl-4 BirdList">
                     <div className="BirdList__item">
                       <div className="BirdList__item--avatar"></div>
-                      <div className="BirdList__item--info text-heading14">
+                      <div className="BirdList__item--info text-heading14" onClick={()=>onNotify("detail")}>
                         <span>Chào mào A</span>
                       </div>
                     </div>
@@ -109,10 +163,10 @@ function BirdList() {
                     <div className="BirdList__button">
                       <div className="row">
                         <div className="col-xl-6">
-                          <button className="btn--Account">Edit</button>
+                          <button className="btn--Account" onClick={()=>onNotify("edit")}>Edit</button>
                         </div>
                         <div className="col-xl-6">
-                          <button className="btn--Account">Delete</button>
+                          <button className="btn--Account" onClick={()=>onNotify("delete")}>Delete</button>
                         </div>
                       </div>
                     </div>
@@ -121,7 +175,7 @@ function BirdList() {
                   <div className="col-xl-4 BirdList">
                     <div className="BirdList__item">
                       <div className="BirdList__item--avatar"></div>
-                      <div className="BirdList__item--info text-heading14">
+                      <div className="BirdList__item--info text-heading14" onClick={()=>onNotify("detail")}>
                         <span>Chào mào A</span>
                       </div>
                     </div>
@@ -129,30 +183,10 @@ function BirdList() {
                     <div className="BirdList__button">
                       <div className="row">
                         <div className="col-xl-6">
-                          <button className="btn--Account">Edit</button>
+                          <button className="btn--Account" onClick={()=>onNotify("edit")}>Edit</button>
                         </div>
                         <div className="col-xl-6">
-                          <button className="btn--Account">Delete</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="col-xl-4 BirdList">
-                    <div className="BirdList__item">
-                      <div className="BirdList__item--avatar"></div>
-                      <div className="BirdList__item--info text-heading14">
-                        <span>Chào mào A</span>
-                      </div>
-                    </div>
-
-                    <div className="BirdList__button">
-                      <div className="row">
-                        <div className="col-xl-6">
-                          <button className="btn--Account">Edit</button>
-                        </div>
-                        <div className="col-xl-6">
-                          <button className="btn--Account">Delete</button>
+                          <button className="btn--Account" onClick={()=>onNotify("delete")}>Delete</button>
                         </div>
                       </div>
                     </div>
@@ -160,7 +194,7 @@ function BirdList() {
                   <div className="col-xl-4 BirdList">
                     <div className="BirdList__item">
                       <div className="BirdList__item--avatar"></div>
-                      <div className="BirdList__item--info text-heading14">
+                      <div className="BirdList__item--info text-heading14" onClick={()=>onNotify("detail")} >
                         <span>Chào mào A</span>
                       </div>
                     </div>
@@ -168,10 +202,10 @@ function BirdList() {
                     <div className="BirdList__button">
                       <div className="row">
                         <div className="col-xl-6">
-                          <button className="btn--Account">Edit</button>
+                          <button className="btn--Account" onClick={()=>onNotify("edit")}>Edit</button>
                         </div>
                         <div className="col-xl-6">
-                          <button className="btn--Account">Delete</button>
+                          <button className="btn--Account" onClick={()=>onNotify("delete")}>Delete</button>
                         </div>
                       </div>
                     </div>
@@ -179,7 +213,7 @@ function BirdList() {
                   <div className="col-xl-4 BirdList">
                     <div className="BirdList__item">
                       <div className="BirdList__item--avatar"></div>
-                      <div className="BirdList__item--info text-heading14">
+                      <div className="BirdList__item--info text-heading14" onClick={()=>onNotify("detail")} >
                         <span>Chào mào A</span>
                       </div>
                     </div>
@@ -187,10 +221,10 @@ function BirdList() {
                     <div className="BirdList__button">
                       <div className="row">
                         <div className="col-xl-6">
-                          <button className="btn--Account">Edit</button>
+                          <button className="btn--Account" onClick={()=>onNotify("edit")}>Edit</button>
                         </div>
                         <div className="col-xl-6">
-                          <button className="btn--Account">Delete</button>
+                          <button className="btn--Account" onClick={()=>onNotify("delete")}>Delete</button>
                         </div>
                       </div>
                     </div>
@@ -202,7 +236,7 @@ function BirdList() {
         </section>
       </UserLayout>
 
-      <div className="BirdList-Detail NotificationNone">
+      <div className={classNames({NotificationNone: !notification.notificationDetail}, "BirdList-Detail")}>
         <div className="BirdList-Detail__item">
           <div className="Detail__item">
             <div className="row">
@@ -241,7 +275,7 @@ function BirdList() {
               <div className="col-xl-4">
                 <div className="BirdList__item">
                   <div className="BirdList__item--avatar"></div>
-                  <div className="BirdList__item--info text-heading14">
+                  <div className="BirdList__item--info text-heading14" onClick={()=>onNotify("detail")}>
                     <span>Giải vô địch chào mào khi vực HCM</span>
                   </div>
                 </div>
@@ -301,16 +335,16 @@ function BirdList() {
             </div>
           </div>
 
-          <button className="CloseNotifi">X</button>
+          <button className="CloseNotifi"  onClick={() => onNotify("detail")}>X</button>
         </div>
       </div>
 
-      <div className="BirdList-Detail NotificationNone">
+      <div className={classNames({NotificationNone: !notification.notificationEdit}, "BirdList-Detail")}>
         <div className="BirdList-Detail__item BirdList-DetailInfo">
           <div className="row">
             <div className="col-xl-5 BirdRegister__BirdList">
               <div className="BirdList__item--avatar"></div>
-              <div className="BirdList__item--info text-heading14">
+              <div className="BirdList__item--info text-heading14" onClick={()=>onNotify("detail")}>
                 <button className="btn--Account">Thêm Ảnh</button>
               </div>
             </div>
@@ -381,7 +415,7 @@ function BirdList() {
                     </label>
                   </div>
                 </div>
-                <div className="BirdList__item--info text-heading14">
+                <div className="BirdList__item--info text-heading14" onClick={()=>onNotify("detail")}>
                   <button className="btn--Account">Hủy</button>
                   <button className="btn--Account btn-save">Lưu lại</button>
                 </div>
@@ -389,11 +423,11 @@ function BirdList() {
             </div>
           </div>
 
-          <button className="CloseNotifi">X</button>
+          <button className="CloseNotifi" onClick={() => onNotify("edit")}>X</button>
         </div>
       </div>
 
-      <div className="BirdList-Detail">
+      <div className={classNames({NotificationNone: !notification.notificationDelete}, "BirdList-Detail")}>
           <div className="row Notification-item-group NotificationAccount">
             <div className="col-xl-12 Notification-item-group-col NotificationAccount-Success">
               <div className="content__tour--general">
@@ -401,7 +435,7 @@ function BirdList() {
                   <span>Bạn chắc chắn muốn xóa Chim Chào Mài A khỏi danh sách ?</span>
                 </div>
                 <div className="content__tour-general-group">
-                  <button className="btn--Account">
+                  <button className="btn--Account" onClick={() => onNotify("delete")}>
                     Hủy
                   </button>
                   <button className="btn--Account btn-save">Xác nhận</button>
