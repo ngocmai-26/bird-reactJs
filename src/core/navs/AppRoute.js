@@ -46,6 +46,7 @@ const ClientRouter = (props)=>{
                 <Route path="/Admin/UserDetail" element={<UserDetail />}/>
                 <Route path="/Admin/MatchDetail" element={<MatchDetail />}/>
                 <Route path="/Admin/Settings" element={<Setting />}/>
+                
             </Routes>
       </BrowserRouter>
     )

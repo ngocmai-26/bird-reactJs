@@ -56,7 +56,7 @@ export function HeaderUser() {
             <i className="fa-solid fa-user-group"></i>
           </div>
           <div className="account col-xl-1 col-md-1 col-1 header__group--item">
-            <img src={avatar} alt="avatar" className="account-img" />
+            <img src={avatar} alt="avatar"  width={"100%"} height={"100%"} className="account-img img-fluid" />
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@ const UserLayout = (props) => {
     }
   }, []);
   return (
-    <div className="row">
+    <div className="row m-0 px-3">
       <NavUser />
       <div className="col-xl-9 col-md-9 tournament">
         <HeaderUser />

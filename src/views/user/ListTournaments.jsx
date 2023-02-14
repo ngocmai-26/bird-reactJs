@@ -122,70 +122,71 @@ function ListTournament() {
                     <span>Thể thức thi đấu</span>
                   </div>
                   <div className="Detail__item--typeof-board">
-                    <div className="row">
-                      <div className="col-xl-3">
-                        <button className="btn-Detail-typeof">Vòng loại</button>
+                      <div className="row m-0">
+                        <div className="col-3  d-flex flex-column justify-content-between align-items-center">
+                            <div className="w-100" style={{backgroundColor:"rgba(0,0,0,0.3)" ,height:"30px"}}>
+                              <p className="text-center fw-bold">Vòng Loại</p>
+                            </div>
+                            {/* line */}
+                            <div className="py-3 d-flex justify-content-center align-items-center flex-column">
+                              <div style={{width:'2px',height:"200px",backgroundColor:"black"}} className={"my-0"}></div>
+                              <span className="fa fa-chevron-down my-0"></span>
+                            </div>
+                            <div className="w-100 position-relative" style={{backgroundColor:"rgba(0,0,0,0.3)" ,height:"30px"}}>
+                              <div  style={{right:"-40px",top:"-25px"}} className="position-absolute up-rank-line d-flex justify-content-center align-items-center flex-column">
+                                <div style={{width:'2px',height:"50px",backgroundColor:"black"}}></div>
+                                <span className="fa fa-chevron-down my-0 text-center"></span>
+                              </div>
+                              <p className="text-center fw-bold">TOP 50</p>
+                            </div>
+                        </div>
+                        <div className="col-3 py-5  d-flex flex-column justify-content-between align-items-center">
+                            <div className="w-100 position-relative" style={{backgroundColor:"rgba(0,0,0,0.3)" ,height:"30px"}}>
+                            <div style={{right:"-40px",top:"-4px",transform:"rotate(300deg)"}} className="position-absolute up-rank-line d-flex justify-content-center align-items-center flex-column">
+                                  <div style={{width:'2px',height:"30px",backgroundColor:"black"}}></div>
+                                  <span className="fa fa-chevron-down my-0 text-center"></span>
+                                </div>
+                              <p className="text-center fw-bold">TOP 30</p>
+                            </div>
+                            {/* line */}
+                            <div className="py-3 d-flex justify-content-center align-items-center flex-column">
+                            <span className="fa fa-chevron-up my-0"></span>
+                              <div style={{width:'2px',height:"120px",backgroundColor:"black"}} className={"my-0"}></div>
+                            </div>
+                            <div className="w-100 position-relative" style={{backgroundColor:"rgba(0,0,0,0.3)" ,height:"30px"}}>
+                              <p className="text-center fw-bold">TOP 40</p>
+                            </div>
+                        </div>
+                        <div className="col-3 my-auto py-5  d-flex flex-column justify-content-between align-items-center">
+                            <div className="py-3">
+                              <div className="w-100" style={{backgroundColor:"rgba(0,0,0,0.3)" ,height:"30px"}}>
+                                <p className="text-center fw-bold px-2">TOP 20</p>
+                              </div>
+                              {/* line */}
+                              <div className="py-3 d-flex justify-content-center align-items-center flex-column">
+                                <div style={{width:'2px',height:"40px",backgroundColor:"black"}} className={"my-0"}></div>
+                                <span className="fa fa-chevron-down my-0 text-center"></span>
+                              </div>
+                              <div className="w-100 position-relative" style={{backgroundColor:"rgba(0,0,0,0.3)" ,height:"30px"}}>
+                                <div style={{right:"-50px",top:"-35px",transform:"rotate(240deg)"}} className="position-absolute up-rank-line d-flex justify-content-center align-items-center flex-column">
+                                  <div style={{width:'2px',height:"50px",backgroundColor:"black"}}></div>
+                                  <span className="fa fa-chevron-down my-0 text-center"></span>
+                                </div>
+                                <p className="text-center fw-bold px-2">TOP 10</p>
+                              </div>
+                            </div>
+                        </div>
+                        <div className="col-3 my-auto py-5  d-flex flex-column justify-content-between align-items-center">
+                            <div className="py-3">
+                              {/* line */}
+                              <div className="py-3 d-flex justify-content-center align-items-center flex-column">
+                                <div className="w-100" style={{backgroundColor:"rgba(0,0,0,0.3)" ,height:"30px"}}>
+                                  <p className="text-center fw-bold px-2">Chung kết</p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-xl-3"></div>
-                      <div className="col-xl-2">
-                        <button className="btn-Detail-typeof">Top 30</button>
-                      </div>
-                    </div>
-
-                    <div className="row">
-                      <div className="col-xl-6"></div>
-                      <div className="col-xl-2">
-                        <button className="btn-Detail-typeof">Top 20</button>
-                      </div>
-                    </div>
-
-                    <div className="row">
-                      <div className="col-xl-9"></div>
-                      <div className="col-xl-3">
-                        <button className="btn-Detail-typeof">Chung kết</button>
-                      </div>
-                    </div>
-
-                    <div className="row">
-                      <div className="col-xl-6"></div>
-                      <div className="col-xl-2">
-                        <button className="btn-Detail-typeof">Top 10</button>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-xl-3"></div>
-                      <div className="col-xl-2">
-                        <button className="btn-Detail-typeof">Top 40</button>
-                      </div>
-                    </div>
-
-                    <div className="row">
-                      <div className="col-xl-3">
-                        <button className="btn-Detail-typeof">Top 50</button>
-                      </div>
-                    </div>
-
-                    <div className="line--round">
-                      <div className="line--round-icon">
-                        <i class="fa-solid fa-chevron-down"></i>
-                      </div>
-                    </div>
-                    <div className="line--round1">
-                      <div className="line--round-icon">
-                        <i class="fa-solid fa-chevron-up"></i>
-                      </div>
-                    </div>
-                    <div className="line--round2">
-                      <div className="line--round-icon">
-                        <i class="fa-solid fa-chevron-down"></i>
-                      </div>
-                    </div>
-                    <div className="line--round3"></div>
-                    <div className="line--round4"></div>
-                    <div className="line--round5"></div>
-                    <div className="line--round6"></div>
                   </div>
                 </div>
               </div>
