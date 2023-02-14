@@ -1,6 +1,29 @@
+import classNames from "classnames";
+import { useState } from "react";
 import UserLayout from "../layout/user/UserLayout";
 
 function ListTournament() {
+  const [notification, setNotification] = useState({
+    notificationDelete: false,
+    notificationDetail: false,
+  })
+
+  const onNotify = (props) => {
+    if(props === "delete") {
+      setNotification((pre) =>
+      (pre = {
+        ...pre,
+        notificationDelete: !notification.notificationDelete,
+      }),)
+    } else if(props === "detail") {
+      setNotification((pre) =>
+      (pre = {
+        ...pre,
+        notificationDetail: !notification.notificationDetail,
+      }),)
+    }
+  }
+
   return (
     <>
       <UserLayout>
@@ -26,7 +49,7 @@ function ListTournament() {
                       </div>
 
                       <div className="BirdList__button">
-                        <button className="btn--Account btn-BirdListEdit">
+                        <button className="btn--Account btn-BirdListEdit" onClick={() => onNotify('detail')}>
                           Edit
                         </button>
                       </div>
@@ -41,7 +64,7 @@ function ListTournament() {
                       </div>
 
                       <div className="BirdList__button">
-                        <button className="btn--Account btn-BirdListEdit">
+                        <button className="btn--Account btn-BirdListEdit" onClick={() => onNotify('detail')}>
                           Edit
                         </button>
                       </div>
@@ -56,7 +79,7 @@ function ListTournament() {
                       </div>
 
                       <div className="BirdList__button">
-                        <button className="btn--Account btn-BirdListEdit">
+                        <button className="btn--Account btn-BirdListEdit" onClick={() => onNotify('detail')}>
                           Edit
                         </button>
                       </div>
@@ -69,7 +92,7 @@ function ListTournament() {
         </section>
       </UserLayout>
 
-      <div className="BirdList-Detail NotificationNone">
+      <div className={classNames({NotificationNone: !notification.notificationDelete},"BirdList-Detail")}>
         <div className="row Notification-item-group NotificationAccount">
           <div className="col-xl-12 Notification-item-group-col NotificationAccount-Success">
             <div className="content__tour--general">
@@ -79,7 +102,7 @@ function ListTournament() {
                 </span>
               </div>
               <div className="content__tour-general-group">
-                <button className="btn--Account">Hủy</button>
+                <button className="btn--Account" onClick={() => onNotify('delete')}>Hủy</button>
                 <button className="btn--Account btn-save">Xác nhận</button>
               </div>
             </div>
@@ -87,7 +110,7 @@ function ListTournament() {
         </div>
       </div>
 
-      <div className="BirdList-Detail BirdList-Detail__ListTour">
+      <div className={classNames({NotificationNone: !notification.notificationDetail},"BirdList-Detail BirdList-Detail__ListTour ")}>
         <div className="BirdList-Detail__item BirdList-Detail__ListTour-item">
           <div className="Detail__item">
             <div className="row">
@@ -204,7 +227,7 @@ function ListTournament() {
                         </div>
                       </div>
                       <div className="btn-Cancel">
-                        <button className="btn--Account ">Hủy Thi Đấu</button>
+                        <button className="btn--Account "  onClick={() => onNotify('delete')}>Hủy Thi Đấu</button>
                       </div>
                     </div>
                     <div className="col-xl-6">
@@ -215,7 +238,7 @@ function ListTournament() {
                         </div>
                       </div>
                       <div className="btn-Cancel">
-                        <button className="btn--Account ">Hủy Thi Đấu</button>
+                        <button className="btn--Account " onClick={() => onNotify('delete')}>Hủy Thi Đấu</button>
                       </div>
                     </div>
                     <div className="col-xl-6">
@@ -226,7 +249,7 @@ function ListTournament() {
                         </div>
                       </div>
                       <div className="btn-Cancel">
-                        <button className="btn--Account ">Hủy Thi Đấu</button>
+                        <button className="btn--Account " onClick={() => onNotify('delete')}>Hủy Thi Đấu</button>
                       </div>
                     </div>
                     <div className="col-xl-6">
@@ -237,7 +260,7 @@ function ListTournament() {
                         </div>
                       </div>
                       <div className="btn-Cancel">
-                        <button className="btn--Account ">Hủy Thi Đấu</button>
+                        <button className="btn--Account " onClick={() => onNotify('delete')}>Hủy Thi Đấu</button>
                       </div>
                     </div>
                   </div>
@@ -246,7 +269,7 @@ function ListTournament() {
             </div>
           </div>
 
-          <button className="CloseNotifi">X</button>
+          <button className="CloseNotifi" onClick={() => onNotify('detail')}>X</button>
         </div>
       </div>
     </>

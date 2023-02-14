@@ -1,6 +1,14 @@
+import classNames from "classnames";
+import { useState } from "react";
 import UserLayout from "../layout/user/UserLayout";
 
 function History() {
+  const [notification, setNotification] = useState(true)
+
+  const onNotify = (props) => {
+    setNotification(!notification)
+  }
+
   return (
     <>
       <UserLayout>
@@ -36,7 +44,7 @@ function History() {
                         </td>
                         <td>20/1/2022 - 29/1/2022</td>
                         <td>
-                          <button className="btn--Account">Detail</button>
+                          <button className="btn--Account" onClick={()=> onNotify()}>Detail</button>
                         </td>
                       </tr>
 
@@ -48,7 +56,7 @@ function History() {
                         </td>
                         <td>20/1/2022 - 29/1/2022</td>
                         <td>
-                          <button className="btn--Account">Detail</button>
+                          <button className="btn--Account" onClick={()=> onNotify()}>Detail</button>
                         </td>
                       </tr>
 
@@ -60,7 +68,7 @@ function History() {
                         </td>
                         <td>20/1/2022 - 29/1/2022</td>
                         <td>
-                          <button className="btn--Account">Detail</button>
+                          <button className="btn--Account" onClick={()=> onNotify()}>Detail</button>
                         </td>
                       </tr>
                     </tbody>
@@ -72,7 +80,7 @@ function History() {
         </section>
       </UserLayout>
 
-      <div className="BirdList-Detail BirdList-Detail__ListTour">
+      <div className={classNames({NotificationNone: notification}, "BirdList-Detail BirdList-Detail__ListTour")}>
         <div className="BirdList-Detail__item BirdList-Detail__ListTour-item BirdList-Detail__History">
           <div className="Detail__item">
             <div className="text--heading">
@@ -176,7 +184,7 @@ function History() {
             </div>
           </div>
 
-          <button className="CloseNotifi">X</button>
+          <button className="CloseNotifi" onClick={() => onNotify()}>X</button>
         </div>
       </div>
     </>
