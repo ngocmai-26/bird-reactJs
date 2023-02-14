@@ -17,6 +17,8 @@ import Setting from '../../views/admin/Setting'
 import AccountInfo from '../../views/user/AccountInfo'
 import BirdList from '../../views/user/BirdList'
 import BirdRegister from '../../views/user/BirdRegister'
+import ListTournament from '../../views/user/ListTournaments'
+import History from '../../views/user/History'
 const ClientRouter = (props)=>{
     return (
         <BrowserRouter>
@@ -29,6 +31,8 @@ const ClientRouter = (props)=>{
                 <Route path="/AccountInfo" element={<AccountInfo />} />
                 <Route path="/BirdList" element={<BirdList />} />
                 <Route path="/BirdRegister" element={<BirdRegister />} />
+                <Route path="/ListTournament" element={<ListTournament />} />
+                <Route path="/History" element={<History />} />
 
                 <Route path="/Admin" element={<Tournament />} />
                 <Route path="/Admin/Match" element={<Match />} />

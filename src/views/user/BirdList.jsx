@@ -202,7 +202,7 @@ function BirdList() {
         </section>
       </UserLayout>
 
-      <div className="BirdList-Detail">
+      <div className="BirdList-Detail NotificationNone">
         <div className="BirdList-Detail__item">
           <div className="Detail__item">
             <div className="row">
@@ -301,11 +301,115 @@ function BirdList() {
             </div>
           </div>
 
-          
-        <button className="CloseNotifi">X</button>
+          <button className="CloseNotifi">X</button>
         </div>
-
       </div>
+
+      <div className="BirdList-Detail NotificationNone">
+        <div className="BirdList-Detail__item BirdList-DetailInfo">
+          <div className="row">
+            <div className="col-xl-5 BirdRegister__BirdList">
+              <div className="BirdList__item--avatar"></div>
+              <div className="BirdList__item--info text-heading14">
+                <button className="btn--Account">Thêm Ảnh</button>
+              </div>
+            </div>
+            <div className="col-xl-7">
+              <div className="BirdRegister__groupInput">
+                <div className="tour--general-group-item">
+                  <div className="tour--info">
+                    <input
+                      type="text"
+                      name="Name"
+                      placeholder="Tên chim"
+                      className="tour--info-input"
+                    />
+                    <label htmlFor="Name" className="tour--info-label">
+                      Tên chim
+                    </label>
+                  </div>
+                </div>
+                <div className="tour--general-group-item">
+                  <div className="tour--info">
+                    <input
+                      type="text"
+                      name="type"
+                      placeholder="Loại chim"
+                      className="tour--info-input"
+                    />
+                    <label htmlFor="type" className="tour--info-label">
+                      Loại chim
+                    </label>
+                  </div>
+                </div>
+                <div className="tour--general-group-item">
+                  <div className="tour--info">
+                    <input
+                      type="text"
+                      name="gioitinh"
+                      placeholder="Giới tính"
+                      className="tour--info-input"
+                    />
+                    <label htmlFor="gioitinh" className="tour--info-label">
+                      Giới tính
+                    </label>
+                  </div>
+                </div>
+                <div className="tour--general-group-item">
+                  <div className="tour--info">
+                    <input
+                      type="text"
+                      name="Years"
+                      placeholder="Năm sinh"
+                      className="tour--info-input"
+                    />
+                    <label htmlFor="Years" className="tour--info-label">
+                      Năm sinh
+                    </label>
+                  </div>
+                </div>
+                <div className="tour--general-group-item">
+                  <div className="tour--info">
+                    <textarea
+                      type="text"
+                      name="More"
+                      placeholder="Miêu tả thêm"
+                      className="tour--info-input textarea-input"
+                    />
+                    <label htmlFor="More" className="tour--info-label">
+                      Miêu tả thêm
+                    </label>
+                  </div>
+                </div>
+                <div className="BirdList__item--info text-heading14">
+                  <button className="btn--Account">Hủy</button>
+                  <button className="btn--Account btn-save">Lưu lại</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button className="CloseNotifi">X</button>
+        </div>
+      </div>
+
+      <div className="BirdList-Detail">
+          <div className="row Notification-item-group NotificationAccount">
+            <div className="col-xl-12 Notification-item-group-col NotificationAccount-Success">
+              <div className="content__tour--general">
+                <div className="content__tour--general-heading">
+                  <span>Bạn chắc chắn muốn xóa Chim Chào Mài A khỏi danh sách ?</span>
+                </div>
+                <div className="content__tour-general-group">
+                  <button className="btn--Account">
+                    Hủy
+                  </button>
+                  <button className="btn--Account btn-save">Xác nhận</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </>
   );
 }

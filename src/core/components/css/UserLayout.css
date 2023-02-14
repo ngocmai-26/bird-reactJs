@@ -264,3 +264,163 @@
 .Detail__item {
     padding: 50px 20px 10px;
 }
+
+.BirdList-Detail .BirdRegister__groupInput {
+    padding: 30px;
+}
+
+.BirdList-DetailInfo {
+    height: auto !important;
+}
+
+.btn-save {
+    background-color: #397ef7;
+    color: #ffffff;
+    margin-left: 5px;
+}
+
+.btn-save:hover {
+    background-color: #5e99ff;
+
+}
+
+.BirdList-Detail .NotificationAccount {
+    margin: auto;
+    padding: 30px 0;
+    
+}
+
+.BirdList-Detail .NotificationAccount-Success .content__tour--general {
+    width: 600px;
+    padding: 30px 10px;
+}
+
+.btn-BirdListEdit {
+    width: auto !important;
+    padding: 0px 30px;
+}
+
+.BirdList-Detail__ListTour-item {
+    width: 80%;
+}
+
+/**********History******************/
+.table-history thead th{
+    background-color: #7f7e7e ;
+    text-align: start;
+    border: 5px solid;
+}
+
+.table-history tbody td {
+    background-color: #7f7e7e ;
+    color: #ffffff;
+
+}
+
+.table-history tbody {
+    border: 4px solid #ffffff;
+}
+
+.btn-Detail-history {
+    background: #aba8a8;
+    color: #ffffff;
+    border: 0;
+    padding: 0 15px;
+}
+
+.Detail-history--item {
+    width: 14.28%;
+    text-align: center;
+}
+
+.Detail-history--item .text--heading14 {
+    font-weight: 600;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.BirdList-Detail__History {
+    height: auto;
+}
+
+.Detail-history--trophy {
+    padding-bottom: 20px;
+}
+
+.Detail-history--trophy-icon {
+    color: #f7de39;
+    font-size: 24px;
+    text-align: center;
+}
+
+.Detail-history--trophy-item {
+    padding: 10px;
+}
+
+.Detail-history--trophy-item .text--heading {
+    font-size: 15px;
+}
+
+.btn-Cancel {
+    margin: auto;
+    text-align: center;
+}
+
+.Detail__item--typeof-board .btn-Detail-typeof {
+    background: #aba8a8;
+    color: #ffffff;
+    border: 0;
+    padding: 0 10px;
+}
+
+.Detail__item--typeof-board {
+    position: relative;
+}
+
+.line--round {
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background-color: #000000;
+    top: 40px;
+    left: 30px;
+}
+
+.line--round .line--round-icon {
+    position: absolute;
+    bottom: -13px;
+    left: -6px;
+    color: #000000;
+}
+
+.line--round1 {
+    position: absolute;
+    width: 2.5px;
+    height: 50px;
+    background-color: #000000;
+    top: 70px;
+    left: 180px;
+}
+
+.line--round1 .line--round-icon {
+    position: absolute;
+    top: -11px;
+    left: -6px;
+    color: #000000;
+}
+
+.line--round2 {
+    position: absolute;
+    width: 2.5px;
+    height: 18px;
+    background-color: #000000;
+    top: 90px;
+    left: 320px;
+}
+
+.line--round2 .line--round-icon {
+    position: absolute;
+    bottom: -11px;
+    left: -6px;
+    color: #000000;
+}
