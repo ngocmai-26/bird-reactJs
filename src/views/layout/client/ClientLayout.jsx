@@ -41,4 +41,18 @@ export const ClientNavigate = (props)=>{
         </Navbar>
     )
 }
+
+
+
 export default ClientLayout;
+
+
+export const NavBar_Left = () => {
+    return (
+        <>
+        <div className="col-xl-3">
+            
+        </div>
+        </>
+    )
+}

@@ -19,6 +19,10 @@ import BirdList from '../../views/user/BirdList'
 import BirdRegister from '../../views/user/BirdRegister'
 import ListTournament from '../../views/user/ListTournaments'
 import History from '../../views/user/History'
+import TournamentList_Dang from '../../views/client/TournamentList_Dang'
+import TournamentList_Da from '../../views/client/TournamentList_Da'
+import TournamentList_Sap from '../../views/client/TournamentList_Sap'
+import Rule from '../../views/client/Rule'
 const ClientRouter = (props)=>{
     return (
         <BrowserRouter>
@@ -26,6 +30,10 @@ const ClientRouter = (props)=>{
                 <Route path="/" element={<Home />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path="/Register" element={<Register />} />
+                <Route path="/TournamentList_Dang" element={<TournamentList_Dang />} />
+                <Route path="/TournamentList_Da" element={<TournamentList_Da />} />
+                <Route path="/TournamentList_Sap" element={<TournamentList_Sap />} />
+                <Route path="/Rule" element={<Rule />} />
               
 
                 <Route path="/AccountInfo" element={<AccountInfo />} />

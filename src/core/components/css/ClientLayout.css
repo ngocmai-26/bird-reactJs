@@ -1,11 +1,14 @@
 .client-header-bg {
     background-image: url("/src/assets/img/client/homeBg1.png");
+    height: auto;
 }
 .way-of-bird-bg {
     background-image: url("/src/assets/img/client/homeBg2.png");
+    height: auto;
 }
 .hot-tournament-bg{
     background-image: url("/src/assets/img/client/homeBg2.png");
+    height: auto;
     background-size: contain;
     background-position: top left;
 
@@ -76,4 +79,222 @@ input:focus{
     .w-md-50{
         width: 80%;
     }
+}
+
+
+/***************Tournament*******************/
+
+.TournamentSearch {
+    padding: 30px 0;
+}
+
+.TournamentSearch-search {
+    border-radius: 6px;
+    border: 1px solid #000000;
+    padding: 2px 5px;
+}
+
+.TournamentSearch-search:focus {
+    border: 1px solid #000000;
+}
+
+#cars {
+    padding: 6px;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.btn-Search {
+    background-color: rgb(91, 147, 251);
+    color: aliceblue;
+    width: 100%;
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 2px 0;
+}
+
+.btn-Search:hover {
+    background-color: rgb(36, 110, 247);
+    color: aliceblue;
+}
+
+.BirdList-Detail__ListTour-line {
+    border-right: 1px solid #8b8b8b;
+}
+
+.btn-detail {
+    background-color: #a4a4a4;
+    color: #ffffff;
+    border: 0;
+    font-size: 14px;
+    padding: 0px 15px;
+    border-radius: 6px;
+}
+
+.btn-detail:hover {
+    background-color: #8b8b8b;
+
+}
+
+.table__detail {
+    background-color: #EBE3ED;
+}
+
+.table__detail th {
+    background-color: #EBE3ED !important;
+    border: 3px solid #ffffff;
+    color: #000000 !important;
+
+}
+
+.table__detail tbody{
+    border: 3px solid #ffffff;
+}
+
+.Detail_register {
+    text-align: end;
+    padding: 15px 0;
+}
+
+.Tournament__detail {
+    height: auto !important ;
+    width: 90% !important;
+    background-color: #ffffff;
+}
+
+.Tournament__detail--avatar {
+    margin: auto;
+    width: 100%;
+    height: auto;
+    background-color: #D1C5DA;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 15px 0;
+    border-radius: 10px;
+}
+
+.describe {
+    padding: 15px 0;
+}
+
+.describe--item-heading {
+    width: auto;
+    font-size: 14px;
+    font-weight: 600;
+    padding-right: 2px;
+
+}
+
+.describe--item {
+    font-size: 14px;
+
+}
+
+.Tournament__detail-top {
+    height: auto !important ;
+    width: 80% !important;
+    background-color: #ffffff;
+}
+
+.detail-pointer{
+    cursor: pointer;
+}
+
+/********************/
+.tournament-avatar {
+    width: 90%;
+    height: 200px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px #f2f2f2, -1px -1px 5px #f2f2f2, 1px -1px 5px #f2f2f2, -1px 1px 5px #f2f2f2;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.tournament-avatar-img {
+    width: 75%;
+    height: 75%;
+    background-color: #D1C5DA;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.Detail__group--btn {
+    text-align: center;
+    margin: 50px -30px;
+}
+
+.btn-cancel, .btn-ok {
+    border: 1px solid #000000;
+    margin: 0 5px;
+    color: #ffffff;
+}
+
+.btn-cancel {
+    background-color: #a4a4a4;
+
+}
+
+.btn-ok {
+    background-color: #4575fa;
+
+}
+
+.btn-cancel:hover {
+    background-color: #949292;
+
+}
+
+.btn-ok:hover {
+    background-color: #396dfe;
+}
+
+/************Rule******************/
+.rule--heading {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.rule--heading-text {
+    font-size: 16px;
+    font-weight: 600
+}
+
+.rule-heading2 {
+    padding-left: 25px;
+    margin-left: 10px;
+}
+
+
+.rule__content--heading {
+    font-size: 14px;
+    font-weight: 600;
+    width: auto;
+    padding-right: 5px;
+}
+
+.rule__content--text {
+    font-size: 14px;
+    font-weight: 500;
+    width: auto;
+
+}
+
+.rule-customer {
+    display: block;
+    
+}
+
+.rule-text-style {
+    list-style-type: disc;
+    margin-left: 40px;
+    padding-left: 5px;
+    list-style-position: outside;
+}
+
+.rule__content--children {
+    margin-left: 60px;
+
 }
