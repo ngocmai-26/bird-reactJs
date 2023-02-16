@@ -2,81 +2,102 @@
     background-image: url("/src/assets/img/client/homeBg1.png");
     height: auto;
 }
+
 .way-of-bird-bg {
     background-image: url("/src/assets/img/client/homeBg2.png");
     height: auto;
 }
-.hot-tournament-bg{
+
+.hot-tournament-bg {
     background-image: url("/src/assets/img/client/homeBg2.png");
     height: auto;
     background-size: contain;
     background-position: top left;
 
 }
-.benefit-layer-resp-bottom{
+
+.benefit-layer-resp-bottom {
     bottom: -46%;
 }
-.footer li{
+
+.footer li {
     line-height: 2;
 }
-.circle-resp{
+
+.circle-resp {
     width: 500px;
     height: 500px;
 }
-.benefit-of-tournament{
+
+.benefit-of-tournament {
     background-image: url("/src/assets/img/client/homeBg4.png");
 }
-.bg{
+
+.bg {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
+
 .home-header {
     height: 80vh;
 }
-input:focus{
+
+input:focus {
     box-shadow: none;
     border: none;
     outline: none;
 }
-.position-md-absolute{
-    position: absolute!important;
+
+.position-md-absolute {
+    position: absolute !important;
 }
-.fs-1_4{
+
+.fs-1_4 {
     font-size: 15px;
 }
-.w-md-50{
-    width:70%;
+
+.w-md-50 {
+    width: 70%;
 }
-.right--100{
+
+.right--100 {
     right: -100px;
 }
-.bottom-100{
-    bottom: 30px!important;
+
+.bottom-100 {
+    bottom: 30px !important;
 }
-@Media (max-width: 768px){
-    .position-md-absolute{
-        position: relative!important;
+
+@Media (max-width: 768px) {
+    .position-md-absolute {
+        position: relative !important;
     }
-    .w-md-50{
+
+    .w-md-50 {
         width: 50%;
     }
-    .right--100{
+
+    .right--100 {
         right: auto;
     }
-    .bottom-100{
+
+    .bottom-100 {
         bottom: auto;
     }
-    .benefit-layer-resp-bottom{
+
+    .benefit-layer-resp-bottom {
         bottom: -26%;
     }
-    .circle-resp{
+
+    .circle-resp {
         width: 320px;
         height: 320px;
     }
 }
+
 @media (max-width: 476px) {
-    .w-md-50{
+    .w-md-50 {
         width: 80%;
     }
 }
@@ -147,7 +168,7 @@ input:focus{
 
 }
 
-.table__detail tbody{
+.table__detail tbody {
     border: 3px solid #ffffff;
 }
 
@@ -157,7 +178,7 @@ input:focus{
 }
 
 .Tournament__detail {
-    height: auto !important ;
+    height: auto !important;
     width: 90% !important;
     background-color: #ffffff;
 }
@@ -192,12 +213,12 @@ input:focus{
 }
 
 .Tournament__detail-top {
-    height: auto !important ;
+    height: auto !important;
     width: 80% !important;
     background-color: #ffffff;
 }
 
-.detail-pointer{
+.detail-pointer {
     cursor: pointer;
 }
 
@@ -225,7 +246,8 @@ input:focus{
     margin: 50px -30px;
 }
 
-.btn-cancel, .btn-ok {
+.btn-cancel,
+.btn-ok {
     border: 1px solid #000000;
     margin: 0 5px;
     color: #ffffff;
@@ -284,7 +306,7 @@ input:focus{
 
 .rule-customer {
     display: block;
-    
+
 }
 
 .rule-text-style {
@@ -296,5 +318,214 @@ input:focus{
 
 .rule__content--children {
     margin-left: 60px;
+}
 
+/***********Login**************/
+
+.login {
+    padding: 120px 0;
+}
+
+.client-title {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.client-body {
+    text-align: center;
+    margin: 50px;
+    padding-top: 10px 0;
+}
+
+.client-group-input {
+    border: 1px solid #000000;
+    width: 500px;
+    margin: auto;
+    padding: 30px 25px;
+    background-color: #d7d7ff4b;
+}
+
+.login__body--group-item {
+    margin: 30px auto;
+    border-bottom: 1px solid #000000;
+}
+
+.login--input {
+    width: 90%;
+    border: none;
+    padding: 5px 10px;
+    background-color: transparent;
+}
+
+.icon-size {
+    font-size: 25px;
+}
+
+.login-forgot {
+    text-align: left;
+    font-size: 14px;
+    border: 0;
+    margin-top: -15px;
+}
+
+.login-forgot a {
+    text-decoration: none;
+    color: #936A94;
+
+}
+
+.btn-Login {
+    padding: 5px 30px;
+    background-color: #D7D7FF;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #494949;
+}
+
+.btn-Login:hover {
+    background-color: #cacaf9;
+
+}
+
+.login__body--group-note {
+    padding: 20px;
+}
+
+.click-here {
+    text-decoration: none;
+    color: #626060;
+    font-weight: 700;
+}
+
+/*****Register***********/
+.register {
+    padding: 50px 0;
+}
+
+.btn-register {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #D7D7FF;
+    border: none;
+    font-weight: 600;
+    color: #494949;
+    padding: 5px 0;
+}
+
+.btn-register:hover {
+    background-color: #cacaf9;
+
+}
+
+.register__body--group-item {
+    margin: 15px 0;
+}
+
+.register__body--group-item .tour--info-label {
+    line-height: 15px;
+    color: #616263 !important;
+}
+
+.register__body--group-item .tour--info-input {
+    padding: 22px 15px;
+}
+
+.register__body--group-item .tour--info-input:focus {
+    border: 1px solid #616263 !important;
+}
+
+.register__body--group-item .tour--info-input:focus .tour--info-label {
+    color: #616263 !important;
+}
+
+/******************/
+.reset {
+    padding: 150px 0;
+}
+
+.reset-title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+    color: #11468F;
+    border-bottom: 1px solid #000000;
+}
+
+.reset__body--group {
+    padding: 40px 0;
+    border-bottom: 1px solid #000000;
+}
+
+.reset--note-text {
+    padding: 10px 0;
+    text-align: left;
+}
+
+.reset__body--group--button {
+    text-align: end;
+    margin: 15px 0;
+}
+
+.btn-resetCancel,
+.btn-resetSuccess {
+    padding: 5px 15px;
+    border: 1px solid #000000;
+    margin-left: 15px;
+    border-radius: 6px;
+}
+
+.btn-resetSuccess {
+    background-color: #396dfe;
+    color: #ffffff;
+}
+
+.feedback {
+    width: 100%;
+    margin: 50px 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px #f2f2f2, -1px -1px 5px #f2f2f2, 1px -1px 5px #f2f2f2, -1px 1px 5px #f2f2f2;
+}
+
+.feedback-background {
+    background-image: url('/src/assets/img/client/feeadback.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.contact--input {
+    width: 100%;
+    padding: 3px 10px;
+    font-size: 16px;
+    border: 1px solid #000000;
+}
+
+.feedback__contact--group-item {
+    padding: 8px;
+}
+
+.contact--input:focus {
+    border: 1px solid #000000;
+}
+
+.contact-label {
+    font-size: 14px;
+}
+
+.btn-send {
+    padding: 3px 20px;
+    background-color: #D7D7FF;
+    border: none;
+    border-radius: 6px;
+}
+
+.btn-send:hover {
+    
+    background-color: #bebefa;
 }
