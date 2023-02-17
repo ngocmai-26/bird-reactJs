@@ -2,6 +2,7 @@ import { ClientNav } from "../../core/utils/Types";
 import ClientLayout, {
   ClientNavigate,
   NavBar_Left,
+  Tournament_Hot,
 } from "../layout/client/ClientLayout";
 import donor_img1 from "../../assets/img/client/Donors_1.png";
 import donor_img2 from "../../assets/img/client/Donor_2.png";
@@ -11,7 +12,7 @@ import { useContext } from "react";
 import classNames from "classnames";
 
 const ThemeContext = createContext({
-  display: ' ',
+  display: " ",
   onDisplay: () => {},
 });
 
@@ -25,14 +26,14 @@ function TournamentList_Sap() {
     new ClientNav(6, "login", "/Client/Login"),
   ];
 
-  const [display, setDisplay] = useState(true)
+  const [display, setDisplay] = useState(true);
 
   const onDisplay = () => {
-    setDisplay(!display );
-  }
+    setDisplay(!display);
+  };
 
   return (
-    <ThemeContext.Provider value={{display: display, onDisplay: onDisplay}}>
+    <ThemeContext.Provider value={{ display: display, onDisplay: onDisplay }}>
       <ClientLayout>
         <div className={"w-100"}>
           <TournamentHeader>
@@ -53,7 +54,10 @@ const TournamentHeader = (props) => {
       <div className={"col-12"}>{props.children}</div>
 
       <div className="row">
-        <NavBar_Left />
+        <div className="col-xl-3">
+          <NavBar_Left />
+          <Tournament_Hot />
+        </div>
         <div className="col-xl-9">
           <TournamentSearch />
           <TournamentContent />
@@ -85,14 +89,17 @@ const TournamentSearch = (props) => {
 };
 
 const TournamentContent = (props) => {
-  const {onDisplay} = useContext(ThemeContext)
+  const { onDisplay } = useContext(ThemeContext);
   return (
     <div className="ContentTournament">
       <div className="row">
         <div className="col-xl-4 BirdList">
           <div className="BirdList__item ">
             <div className="BirdList__item--avatar"></div>
-            <div className="BirdList__item--info text-heading14" onClick={()=>onDisplay()}>
+            <div
+              className="BirdList__item--info text-heading14"
+              onClick={() => onDisplay()}
+            >
               <span>Chào mào A</span>
             </div>
           </div>
@@ -101,7 +108,10 @@ const TournamentContent = (props) => {
         <div className="col-xl-4 BirdList">
           <div className="BirdList__item">
             <div className="BirdList__item--avatar"></div>
-            <div className="BirdList__item--info text-heading14" onClick={()=>onDisplay()}>
+            <div
+              className="BirdList__item--info text-heading14"
+              onClick={() => onDisplay()}
+            >
               <span>Chào mào A</span>
             </div>
           </div>
@@ -110,7 +120,10 @@ const TournamentContent = (props) => {
         <div className="col-xl-4 BirdList">
           <div className="BirdList__item">
             <div className="BirdList__item--avatar"></div>
-            <div className="BirdList__item--info text-heading14" onClick={()=>onDisplay()}>
+            <div
+              className="BirdList__item--info text-heading14"
+              onClick={() => onDisplay()}
+            >
               <span>Chào mào A</span>
             </div>
           </div>
@@ -119,7 +132,10 @@ const TournamentContent = (props) => {
         <div className="col-xl-4 BirdList">
           <div className="BirdList__item">
             <div className="BirdList__item--avatar"></div>
-            <div className="BirdList__item--info text-heading14" onClick={()=>onDisplay()}>
+            <div
+              className="BirdList__item--info text-heading14"
+              onClick={() => onDisplay()}
+            >
               <span>Chào mào A</span>
             </div>
           </div>
@@ -128,7 +144,10 @@ const TournamentContent = (props) => {
         <div className="col-xl-4 BirdList">
           <div className="BirdList__item">
             <div className="BirdList__item--avatar"></div>
-            <div className="BirdList__item--info text-heading14" onClick={()=>onDisplay()}>
+            <div
+              className="BirdList__item--info text-heading14"
+              onClick={() => onDisplay()}
+            >
               <span>Chào mào A</span>
             </div>
           </div>
@@ -137,7 +156,10 @@ const TournamentContent = (props) => {
         <div className="col-xl-4 BirdList">
           <div className="BirdList__item">
             <div className="BirdList__item--avatar"></div>
-            <div className="BirdList__item--info text-heading14" onClick={()=>onDisplay()}>
+            <div
+              className="BirdList__item--info text-heading14"
+              onClick={() => onDisplay()}
+            >
               <span>Chào mào A</span>
             </div>
           </div>
@@ -146,7 +168,10 @@ const TournamentContent = (props) => {
         <div className="col-xl-4 BirdList">
           <div className="BirdList__item">
             <div className="BirdList__item--avatar"></div>
-            <div className="BirdList__item--info text-heading14" onClick={()=>onDisplay()}>
+            <div
+              className="BirdList__item--info text-heading14"
+              onClick={() => onDisplay()}
+            >
               <span>Chào mào A</span>
             </div>
           </div>
@@ -154,7 +179,10 @@ const TournamentContent = (props) => {
         <div className="col-xl-4 BirdList">
           <div className="BirdList__item">
             <div className="BirdList__item--avatar"></div>
-            <div className="BirdList__item--info text-heading14" onClick={()=>onDisplay()}>
+            <div
+              className="BirdList__item--info text-heading14"
+              onClick={() => onDisplay()}
+            >
               <span>Chào mào A</span>
             </div>
           </div>
@@ -162,7 +190,10 @@ const TournamentContent = (props) => {
         <div className="col-xl-4 BirdList">
           <div className="BirdList__item">
             <div className="BirdList__item--avatar"></div>
-            <div className="BirdList__item--info text-heading14" onClick={()=>onDisplay()}>
+            <div
+              className="BirdList__item--info text-heading14"
+              onClick={() => onDisplay()}
+            >
               <span>Chào mào A</span>
             </div>
           </div>
@@ -173,9 +204,14 @@ const TournamentContent = (props) => {
 };
 
 const TournamentDetail = (props) => {
-  const {display, onDisplay} = useContext(ThemeContext)
+  const { display, onDisplay } = useContext(ThemeContext);
   return (
-    <div className={classNames({NotificationNone: display}, "BirdList-Detail BirdList-Detail__ListTour ")}>
+    <div
+      className={classNames(
+        { NotificationNone: display },
+        "BirdList-Detail BirdList-Detail__ListTour "
+      )}
+    >
       <div className="BirdList-Detail__item BirdList-Detail__ListTour-item">
         <div className="Detail__item">
           <div className="row">
@@ -443,7 +479,9 @@ const TournamentDetail = (props) => {
           </div>
         </div>
 
-        <button className="CloseNotifi" onClick={()=>onDisplay()}>X</button>
+        <button className="CloseNotifi" onClick={() => onDisplay()}>
+          X
+        </button>
       </div>
     </div>
   );

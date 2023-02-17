@@ -529,3 +529,26 @@ input:focus {
     
     background-color: #bebefa;
 }
+
+.navClient__group {
+    width: 300px;
+    height: auto;
+    background-color: #c0c0ffa9;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.menuClient {
+    padding: 20px;
+}
+
+.menuClient__list .rounded {
+    padding: 0 15px;
+}
+
+
+
+.menuClient__general .BirdList__item {
+    width: 80%;
+    margin: 15px auto;
+}

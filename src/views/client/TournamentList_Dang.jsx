@@ -2,6 +2,7 @@ import { ClientNav } from "../../core/utils/Types";
 import ClientLayout, {
   ClientNavigate,
   NavBar_Left,
+  Tournament_Hot,
 } from "../layout/client/ClientLayout";
 
 import donor_img1 from "../../assets/img/client/Donors_1.png";
@@ -65,7 +66,7 @@ function TournamentList_Dang(props) {
             Tournament_Info: !display.Tournament_Info,
           })
       );
-    }else if (props === "register") {
+    } else if (props === "register") {
       setDisplay(
         (pre) =>
           (pre = {
@@ -109,7 +110,10 @@ const TournamentHeader = (props) => {
       <div className={"col-12"}>{props.children}</div>
 
       <div className="row">
-        <NavBar_Left />
+        <div className="col-xl-3">
+          <NavBar_Left />
+          <Tournament_Hot />
+        </div>
         <div className="col-xl-9">
           <TournamentSearch />
           <TournamentContent />
@@ -545,7 +549,12 @@ const TournamentDetail = (props) => {
                   </tbody>
                 </table>
                 <div className="Detail_register">
-                  <button className="btn--Account" onClick={() => onDisplay('register')}>Đăng kí thi đấu</button>
+                  <button
+                    className="btn--Account"
+                    onClick={() => onDisplay("register")}
+                  >
+                    Đăng kí thi đấu
+                  </button>
                 </div>
               </div>
             </div>
@@ -951,7 +960,12 @@ const Tournament_Top = (props) => {
 const Tournament_Register = (props) => {
   const { register, onDisplay } = useContext(ThemeContext);
   return (
-    <div className={classNames({NotificationNone: register},"BirdList-Detail BirdList-Detail__ListTour")}>
+    <div
+      className={classNames(
+        { NotificationNone: register },
+        "BirdList-Detail BirdList-Detail__ListTour"
+      )}
+    >
       <div className="BirdList-Detail__item Tournament__detail-top">
         <div className="Detail__item">
           <div className="row">
@@ -967,9 +981,7 @@ const Tournament_Register = (props) => {
               <div className="row">
                 <div className="col-xl-5">
                   <div className="tournament-avatar">
-                    <div className="tournament-avatar-img">
-
-                    </div>
+                    <div className="tournament-avatar-img"></div>
                   </div>
                 </div>
 
@@ -985,24 +997,18 @@ const Tournament_Register = (props) => {
               <div className="Bird-point">
                 <div className="row">
                   <div className="col-xl-6">
-                    <span className="text--heading">
-                      Tổng điểm
-                    </span>
-                  </div><div className="col-xl-6">
-                    <span className="text--heading">
-                      2600
-                    </span>
+                    <span className="text--heading">Tổng điểm</span>
+                  </div>
+                  <div className="col-xl-6">
+                    <span className="text--heading">2600</span>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-xl-6">
-                    <span className="text--heading">
-                      Rank
-                    </span>
-                  </div><div className="col-xl-6">
-                    <span className="text--heading">
-                      586
-                    </span>
+                    <span className="text--heading">Rank</span>
+                  </div>
+                  <div className="col-xl-6">
+                    <span className="text--heading">586</span>
                   </div>
                 </div>
               </div>
@@ -1014,7 +1020,9 @@ const Tournament_Register = (props) => {
           </div>
         </div>
 
-        <button className="CloseNotifi" onClick={()=>onDisplay('register')}>X</button>
+        <button className="CloseNotifi" onClick={() => onDisplay("register")}>
+          X
+        </button>
       </div>
     </div>
   );

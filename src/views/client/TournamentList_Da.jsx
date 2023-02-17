@@ -2,6 +2,7 @@ import { ClientNav } from "../../core/utils/Types";
 import ClientLayout, {
   ClientNavigate,
   NavBar_Left,
+  Tournament_Hot,
 } from "../layout/client/ClientLayout";
 import donor_img1 from "../../assets/img/client/Donors_1.png";
 import donor_img2 from "../../assets/img/client/Donor_2.png";
@@ -40,8 +41,7 @@ function TournamentList_Da(props) {
             Tournament_Top: true,
           })
       );
-    }
-    else if (props === "top") {
+    } else if (props === "top") {
       setDisplay(
         (pre) =>
           (pre = {
@@ -81,7 +81,10 @@ const TournamentHeader = (props) => {
       <div className={"col-12"}>{props.children}</div>
 
       <div className="row">
-        <NavBar_Left />
+        <div className="col-xl-3">
+          <NavBar_Left />
+          <Tournament_Hot />
+        </div>
         <div className="col-xl-9">
           <TournamentSearch />
           <TournamentContent />
