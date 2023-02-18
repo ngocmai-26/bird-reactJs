@@ -4,8 +4,71 @@ import { useState } from "react";
 import classNames from "classnames";
 
 function AccountInfo() {
-  const [display, setDisplay] = useState(false);
+  const [display, setDisplay] = useState({
+    overview: false,
+    security: true,
+    update: true
+
+  });
   const [NotificationNone, setNotificationNone] = useState(false);
+  const [notification, setNotification] = useState({
+    Notify: true,
+    NotificationUpdate: true,
+    NotificationResetPassword: true,
+  });
+
+
+  const Notify = (props) => {
+    // if(props === "update") {
+      // setNotification((pre) =>
+      // (pre = {
+      //   ...pre,
+      //   NotificationUpdate: !notification.NotificationUpdate,
+      // }),)
+    // } else if(props === "reset") {
+    //   setNotification((pre) =>
+    //   (pre = {
+    //     ...pre,
+    //     NotificationResetPassword: !notification.NotificationResetPassword,
+    //   }),)
+    // } else if(props === "notify") {
+    //   setNotification((pre) =>
+    //   (pre = {
+    //     ...pre,
+    //     Notify: !notification.Notify,
+    //   }),)
+    // }
+
+  }
+
+  const onDisplay = (props) => {
+    
+    if(props==="overview") {
+      setDisplay((pre) =>
+      (pre = {
+        ...pre,
+        overview: false,
+        security: true,
+        update: true
+      }),)
+    } else if(props==="security") {
+      setDisplay((pre) =>
+      (pre = {
+        ...pre,
+        overview: true,
+        security: false,
+        update: true
+      }),)
+    }else if(props==="update") {
+      setDisplay((pre) =>
+      (pre = {
+        ...pre,
+        overview: true,
+        security: true,
+        update: false
+      }),)
+    }
+  }
 
   const onSuccess = (props) => {
     setNotificationNone(!NotificationNone);
@@ -14,6 +77,8 @@ function AccountInfo() {
   const onChangeDisplay = (props) => {
     console.log(props)
   }
+
+
 
   return (
     <>
@@ -77,26 +142,28 @@ function AccountInfo() {
 
                   <div className="bodyAccount--item-menu">
                     <ul className="bodyAccount__MenuList">
-                      <li className="bodyAccount__MenuList--item text--heading " onClick={()=>onChangeDisplay(display? !display:display)}>
+                      <li className="bodyAccount__MenuList--item text--heading " onClick={()=>onDisplay("overview")}>
                         Tổng quan
-                        <span className="text-hr"></span>
+                        <span className={classNames({display: display.overview},"text-hr")}></span>
+                        <span className={classNames({display: display.update},"text-hr")}></span>
                       </li>
-                      <li className="bodyAccount__MenuList--item text--heading" onClick={()=>onChangeDisplay(display? !display:display)}>
+                      <li className="bodyAccount__MenuList--item text--heading" onClick={()=>onDisplay("security")}>
                         Bảo mật
+                        <span className={classNames({display: display.security},"text-hr")}></span>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
 
-              <div className="content__bodyAccount--item content__bodyAccount--item-text">
+              <div className={classNames({display: display.overview }, "content__bodyAccount--item content__bodyAccount--item-text")}>
                 <div className="content__bodyAccount--heading">
                   <div className="row">
                     <div className="col-xl-9 text--heading">
                       Thông tin tài khoản
                     </div>
                     <div className="col-xl-3 updateAccount">
-                      <button className="btn--Account">Update</button>
+                      <button className="btn--Account"  onClick={()=>onDisplay("update")}>Update</button>
                     </div>
                   </div>
                 </div>
@@ -147,7 +214,7 @@ function AccountInfo() {
                 </div>
               </div>
 
-              <div className="content__bodyAccount--item content__bodyAccount--item-text">
+              <div className={classNames({display: display.security },"content__bodyAccount--item content__bodyAccount--item-text")}>
                 <div className="content__bodyAccount--heading">
                   <div className="text--heading">Bảo mật</div>
                 </div>
@@ -194,7 +261,7 @@ function AccountInfo() {
                 </div>
               </div>
 
-              <div className="content__bodyAccount--item content__bodyAccount--item-text">
+              <div className={classNames({display: display.update },"content__bodyAccount--item content__bodyAccount--item-text")}>
                 <div className="content__bodyAccount--heading">
                   <div className="text--heading">Thông tin tài khoản</div>
                 </div>

@@ -17,6 +17,14 @@ import Setting from '../../views/admin/Setting'
 import AccountInfo from '../../views/user/AccountInfo'
 import BirdList from '../../views/user/BirdList'
 import BirdRegister from '../../views/user/BirdRegister'
+import ListTournament from '../../views/user/ListTournaments'
+import History from '../../views/user/History'
+import TournamentList_Dang from '../../views/client/TournamentList_Dang'
+import TournamentList_Da from '../../views/client/TournamentList_Da'
+import TournamentList_Sap from '../../views/client/TournamentList_Sap'
+import Rule from '../../views/client/Rule'
+import ResetPass from '../../views/client/ResetPass'
+import Feedback from '../../views/client/Feedback'
 const ClientRouter = (props)=>{
     return (
         <BrowserRouter>
@@ -24,11 +32,19 @@ const ClientRouter = (props)=>{
                 <Route path="/" element={<Home />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path="/Register" element={<Register />} />
+                <Route path="/ResetPass" element={<ResetPass />} />
+                <Route path="/Feedback" element={<Feedback />} />
+                <Route path="/TournamentList_Dang" element={<TournamentList_Dang />} />
+                <Route path="/TournamentList_Da" element={<TournamentList_Da />} />
+                <Route path="/TournamentList_Sap" element={<TournamentList_Sap />} />
+                <Route path="/Rule" element={<Rule />} />
               
 
                 <Route path="/AccountInfo" element={<AccountInfo />} />
                 <Route path="/BirdList" element={<BirdList />} />
                 <Route path="/BirdRegister" element={<BirdRegister />} />
+                <Route path="/ListTournament" element={<ListTournament />} />
+                <Route path="/History" element={<History />} />
 
                 <Route path="/Admin" element={<Tournament />} />
                 <Route path="/Admin/Match" element={<Match />} />
@@ -42,6 +58,7 @@ const ClientRouter = (props)=>{
                 <Route path="/Admin/UserDetail" element={<UserDetail />}/>
                 <Route path="/Admin/MatchDetail" element={<MatchDetail />}/>
                 <Route path="/Admin/Settings" element={<Setting />}/>
+                
             </Routes>
       </BrowserRouter>
     )
