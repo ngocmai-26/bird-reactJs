@@ -1,4 +1,3 @@
-
 import "../../../core/components/css/AdminLayout.css";
 import "../../../core/components/css/UserLayout.css";
 import logo from "../../../assets/img/admin/logo_bird.png";
@@ -9,7 +8,6 @@ import { Link } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import userNavModel from "../../../models/UserNavModel";
 
-
 export function NavUser() {
   return (
     <div className="col-xl-3 col-md-3 col-0 nav">
@@ -19,23 +17,39 @@ export function NavUser() {
         </div>
 
         <div className="menu">
-          {userNavModel.links.map((link,index)=>{
+          {userNavModel.links.map((link, index) => {
             return (
               <div className="menu__general" key={index.toString()}>
                 <div className="menu--title">{link?.title}</div>
                 <ul className="menu__list list-unstyled">
-                  {link.children.length > 0 && link.children.map ((val,index)=>{
-                      return(
-                        <li key={index.toString()} onClick={()=>{userNavModel.setActive(val.id)}} className="w-100 py-1 rounded" style={{backgroundColor:userNavModel.active === val?.id  ? "#AAAAFF" : 'white'}}>
-                        <Link className="nav-link fw-bold py-0" style={{color:"#0F172A",fontSize:"14px"}}>
-                          {val?.title}
-                        </Link>
-                      </li>
-                      )
-                  })} 
+                  {link.children.length > 0 &&
+                    link.children.map((val, index) => {
+                      return (
+                        <li
+                          key={index.toString()}
+                          onClick={() => {
+                            userNavModel.setActive(val.id);
+                          }}
+                          className="w-100 py-1 rounded"
+                          style={{
+                            backgroundColor:
+                              userNavModel.active === val?.id
+                                ? "#AAAAFF"
+                                : "white",
+                          }}
+                        >
+                          <Link
+                            className="nav-link fw-bold py-0"
+                            style={{ color: "#0F172A", fontSize: "14px" }}
+                          >
+                            {val?.title}
+                          </Link>
+                        </li>
+                      );
+                    })}
                 </ul>
               </div>
-            )
+            );
           })}
         </div>
       </nav>
@@ -56,7 +70,13 @@ export function HeaderUser() {
             <i className="fa-solid fa-user-group"></i>
           </div>
           <div className="account col-xl-1 col-md-1 col-1 header__group--item">
-            <img src={avatar} alt="avatar"  width={"100%"} height={"100%"} className="account-img img-fluid" />
+            <img
+              src={avatar}
+              alt="avatar"
+              width={"100%"}
+              height={"100%"}
+              className="account-img img-fluid"
+            />
           </div>
         </div>
       </div>
@@ -88,4 +108,3 @@ const UserLayout = (props) => {
 };
 
 export default observer(UserLayout);
-
