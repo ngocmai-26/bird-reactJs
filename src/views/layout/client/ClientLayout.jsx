@@ -6,6 +6,8 @@ import "../../../core/components/css/ClientFont.css";
 import "../../../core/components/css/ClientLayout.css";
 import userNavModel from "../../../models/UserNavModel";
 import homeNavModel from "../../../models/HomeNavModel";
+import authModel from "../../../models/AuthModel";
+import userModel from "../../../models/UserModel";
 const ClientLayout = (props) => {
   return (
     <div className="w-100">
@@ -25,10 +27,17 @@ export const ClientNavigate = (props) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
-          {links.map((link) => {
+          {links.map((link,index) => {
             return (
-              <>
+              <span 
+                key={link?.id.toString()}
+              >
                 {link.title === "login" ? (
+                  authModel.isLogin ? 
+                  <div style={{cursor:"pointer"}} className="d-flex justify-content-center align-items-center">
+                    <span className="fa fa-user fa" style={{fontSize:"20px"}}></span>
+                  </div>
+                  :
                   <Link
                     className={"text-white px-lg-4 px-3 bg-black"}
                     style={{
@@ -37,7 +46,6 @@ export const ClientNavigate = (props) => {
                       fontFamily: "Inter",
                       fontSize: "14px",
                     }}
-                    key={link?.id.toString()}
                     to={link?.to}
                   >
                     {link?.title.toUpperCase()}
@@ -50,13 +58,12 @@ export const ClientNavigate = (props) => {
                       fontFamily: "Inter",
                       fontSize: "14px",
                     }}
-                    key={link?.id.toString()}
                     to={link?.to}
                   >
                     {link?.title.toUpperCase()}
                   </Link>
                 )}
-              </>
+              </span>
             );
           })}
         </Nav>
@@ -74,7 +81,7 @@ export const NavBar_Left = () => {
         <div className="menuClient">
           {homeNavModel.links.map((link, index) => {
             return (
-              <div className="menuClient__general" key={index.toString()}>
+              <div  className="menuClient__general" key={index.toString()}>
                 <ul className="menuClient__list list-unstyled">
                   <li
                     key={index.toString()}

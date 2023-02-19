@@ -1,4 +1,46 @@
+import { useLayoutEffect, useState } from "react";
+import { LoginInfo } from "../../core/utils/Types";
+import authModel from "../../models/AuthModel";
+import {observer} from 'mobx-react'
+import { showToast } from "../../core/utils/Helper";
+import toastModel from "../../models/ToastModel";
+import { TOAST } from "../../core/utils/Contains";
+import { useNavigate } from "react-router";
 const Login = (props)=>{
+    const [email,setEmail] = useState()
+    const [password,setPassword] = useState()
+    const [loading,setLoading] = useState(false)
+    const handleLogin =async ()=> {
+        if(loading){
+            return;
+        }
+        if(!email || email === ""){
+            showToast(TOAST.ICON.ERROR,"Email can not null",toastModel.defaultToastOption)
+            return;
+        }
+        if(!password || password === ""){
+            showToast(TOAST.ICON.ERROR,"Password can not null",toastModel.defaultToastOption)
+            return;
+        }
+
+        if(!email.match(/^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/)){
+            showToast(TOAST.ICON.ERROR,"Email incorrect format",toastModel.defaultToastOption)
+            
+            return;
+        }
+
+        setLoading(true)
+        setTimeout(async()=>{
+            setLoading(false)
+            await authModel.onLogin(new LoginInfo(email,password));
+        },500)
+    }
+    const nav = useNavigate()
+    useLayoutEffect(()=>{
+        if(authModel.isLogin){
+            nav("/")
+        }
+    },[authModel.isLogin])
     return (
         <div className="client-header-bg">
             <div className="login">
@@ -9,20 +51,27 @@ const Login = (props)=>{
                 <div className="login__body client-body">
                     <div className="login__body--group client-group-input">
                         <div className="login__body--group-item ">
-                            <input type="text" placeholder="Username" className="login--username login--input" />
-                            <i class="fa-regular fa-circle-user icon-size"></i>
+                            <input onInput={(e)=>{
+                                setEmail(e.target.value)
+                            }} type="text" placeholder="Username" className="login--username login--input" />
+                            <i className="fa-regular fa-circle-user icon-size"></i>
                         </div>
                         <div className="login__body--group-item ">
-                            <input type="text" placeholder="Password" className="login--password login--input" />
-                            <i class="fa-sharp fa-solid fa-lock icon-size"></i>
+                            <input onInput={(e)=>{setPassword(e.target.value)}} type="password" placeholder="Password" className="login--password login--input" />
+                            <i className="fa-sharp fa-solid fa-lock icon-size"></i>
                         </div>
                         <div className="login__body--group-item login-forgot">
                             <a href="#">Forgot Password</a>
                         </div>
 
                         <div className="login__body--group--button">
-                            <button className="btn-Login">Login</button>
-                        </div>
+                            <button onClick={handleLogin} className="btn-Login">
+                                {loading ? 
+                                    <div className="spinner-border spinner-border-sm" role="status"></div>
+                                    :"Login"    
+                                }
+                            </button>
+                        </div>  
 
                         <div className="login__body--group-note">
                             <span>
@@ -36,4 +85,4 @@ const Login = (props)=>{
     )
 }
 
-export default Login;
+export default observer(Login);

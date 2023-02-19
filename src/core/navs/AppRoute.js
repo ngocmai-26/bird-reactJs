@@ -26,6 +26,8 @@ import Rule from '../../views/client/Rule'
 import ResetPass from '../../views/client/ResetPass'
 import Feedback from '../../views/client/Feedback'
 const ClientRouter = (props)=>{
+   
+
     return (
         <BrowserRouter>
             <Routes>

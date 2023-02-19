@@ -28,7 +28,7 @@ const Home = (props)=>{
         new ClientNav(3,"rule","/Client/Rule"),
         new ClientNav(4,"BXH","/Client/BXH"),
         new ClientNav(5,"about","/Client/About"),
-        new ClientNav(6,"login","/Client/Login")
+        new ClientNav(6,"login","/Login")
     ]
     return (
         <ClientLayout>

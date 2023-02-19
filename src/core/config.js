@@ -1,6 +1,6 @@
 export const configs  =  {
     api_version : "",
-    api_base_uri:"https://api.demo.com/",
+    api_base_uri:"http://206.189.44.15:8080",
     api_token:"",
     api_refresh_token:"",
     secret_key:"",
