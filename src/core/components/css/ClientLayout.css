@@ -552,3 +552,25 @@ input:focus {
     width: 80%;
     margin: 15px auto;
 }
+
+.Charts {
+    width: 60% !important;
+}
+
+.Charts__item-text {
+    width: 80%;
+    border-bottom: 1px solid #000000;
+}
+
+.charts__text--item {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.Charts__item {
+    padding: 30px;
+}
+
+.charts__text {
+    padding: 20px;
+}

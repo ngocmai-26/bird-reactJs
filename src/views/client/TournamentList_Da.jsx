@@ -1,5 +1,6 @@
 import { ClientNav } from "../../core/utils/Types";
 import ClientLayout, {
+  Charts,
   ClientNavigate,
   NavBar_Left,
   Tournament_Hot,

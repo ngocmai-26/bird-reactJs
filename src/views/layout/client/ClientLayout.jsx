@@ -6,6 +6,7 @@ import "../../../core/components/css/ClientFont.css";
 import "../../../core/components/css/ClientLayout.css";
 import userNavModel from "../../../models/UserNavModel";
 import homeNavModel from "../../../models/HomeNavModel";
+import classNames from "classnames";
 const ClientLayout = (props) => {
   return (
     <div className="w-100">
@@ -112,42 +113,120 @@ export const Tournament_Hot = () => {
     <>
       <div className="navClient__group">
         <div className="menuClient__general">
-        <div className="BirdList">
-          <h6>CÁC GIẢI ĐẤU ĐANG HOT</h6>
-          <div className="BirdList__item ">
-            <div className="BirdList__item--avatar"></div>
-            <div
-              className="BirdList__item--info text-heading14"
-              
-            >
-              <span>Chào mào A</span>
+          <div className="BirdList">
+            <h6>CÁC GIẢI ĐẤU ĐANG HOT</h6>
+            <div className="BirdList__item ">
+              <div className="BirdList__item--avatar"></div>
+              <div className="BirdList__item--info text-heading14">
+                <span>Chào mào A</span>
+              </div>
+            </div>
+
+            <div className="BirdList__item ">
+              <div className="BirdList__item--avatar"></div>
+              <div className="BirdList__item--info text-heading14">
+                <span>Chào mào A</span>
+              </div>
+            </div>
+
+            <div className="BirdList__item ">
+              <div className="BirdList__item--avatar"></div>
+              <div className="BirdList__item--info text-heading14">
+                <span>Chào mào A</span>
+              </div>
             </div>
           </div>
-
-          <div className="BirdList__item ">
-            <div className="BirdList__item--avatar"></div>
-            <div
-              className="BirdList__item--info text-heading14"
-              
-            >
-              <span>Chào mào A</span>
-            </div>
-          </div>
-
-          <div className="BirdList__item ">
-            <div className="BirdList__item--avatar"></div>
-            <div
-              className="BirdList__item--info text-heading14"
-              
-            >
-              <span>Chào mào A</span>
-            </div>
-          </div>
-
-          
-        </div>
         </div>
       </div>
     </>
+  );
+};
+
+export const Charts = () => {
+  return (
+    <div className={classNames("BirdList-Detail BirdList-Detail__ListTour ")}>
+      <div className=" Charts BirdList-Detail__item BirdList-Detail__ListTour-item">
+        <div className=" Detail__item">
+          <div className="Charts__Info">
+            <div className="row">
+              <div className="col-xl-3">
+                <div className="BirdList__item--avatar"></div>
+              </div>
+              <div className="col-xl-9">
+                <div className="text-heading14">
+                  <span>Chào mào A</span>
+                </div>
+                <div className="text-heading14">
+                  <span>Chào mào bạch tạng</span>
+                </div>
+                <div className="text-heading14">
+                  <span>
+                    Đặc điểm: Có nhiều lông, màu xanh, dành cho những thợ săn
+                    .....
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="Charts__item">
+            <div className="row">
+              <div className="col-xl-6">
+                <div className="Charts__item-text text--heading">
+                  <span>Các giải đấu đã tham gia</span>
+                </div>
+                <div className="charts__text">
+                  <div className="charts__text--item">
+                    <span>Giải vô địch chào mào khu vực HCM</span>
+                  </div>
+                  <div className="charts__text--item">
+                    <span>Giải vô địch chào mào khu vực HCM</span>
+                  </div>
+                  <div className="charts__text--item">
+                    <span>Giải vô địch chào mào khu vực HCM</span>
+                  </div>
+                  <div className="charts__text--item">
+                    <span>Giải vô địch chào mào khu vực HCM</span>
+                  </div>
+                  <div className="charts__text--item">
+                    <span>Giải vô địch chào mào khu vực HCM</span>
+                  </div>
+                  <div className="charts__text--item">
+                    <span>Giải vô địch chào mào khu vực HCM</span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-xl-6">
+                <div className="Charts__item-text text--heading">
+                  <span>Danh hiệu đã đạt được</span>
+                </div>
+                <div className="charts__text">
+                  <div className="charts__text--item">
+                    <span>Vô địch giải ABC</span>
+                  </div>
+                  <div className="charts__text--item">
+                    <span>Vô địch giải ABC</span>
+                  </div>
+                  <div className="charts__text--item">
+                    <span>Vô địch giải ABC</span>
+                  </div>
+                  <div className="charts__text--item">
+                    <span>Vô địch giải ABC</span>
+                  </div>
+                  <div className="charts__text--item">
+                    <span>Vô địch giải ABC</span>
+                  </div>
+                  <div className="charts__text--item">
+                    <span>Vô địch giải ABC</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button className="CloseNotifi">X</button>
+      </div>
+    </div>
   );
 };
