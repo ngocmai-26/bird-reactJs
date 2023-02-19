@@ -34,7 +34,8 @@ function App() {
     },[])
   ///
   useLayoutEffect(()=>{
-    if(userModel.user.email && userModel.user?.email !== ""){
+    console.log(userModel.user)
+    if(userModel.user.email && userModel.user?.email !== "" && !authModel.isLogin){
         localStorage.setItem(USER_LOGIN_KEY,JSON.stringify({token:baseApi.api_token}));
         authModel.setIsLogin(true)
         showToast(TOAST.ICON.SUCCESS,"Auto Login Success",toastModel.defaultToastOption)

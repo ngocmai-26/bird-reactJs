@@ -31,8 +31,8 @@ const Login = (props)=>{
 
         setLoading(true)
         setTimeout(async()=>{
-            setLoading(false)
             await authModel.onLogin(new LoginInfo(email,password));
+            setLoading(false)
         },500)
     }
     const nav = useNavigate()
