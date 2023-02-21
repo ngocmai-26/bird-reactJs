@@ -77,7 +77,7 @@ class AuthModel{
                 showToast(TOAST.ICON.ERROR,"Register info incorrect format",toastModel.defaultToastOption)
             }
         }catch(e){
-
+            
         }
     }
     /// fetching api luon de on len dau

@@ -12,7 +12,7 @@ import cup from '../../assets/img/client/cup.png'
 import  image6 from '../../assets/img/client/image 6.png'
 import  image7 from '../../assets/img/client/image 7.png'
 import  image8 from '../../assets/img/client/image 8.png'
-import  image23 from '../../assets/img/client/image 23.png'
+//import  image23 from '../../assets/img/client/image 23.png'
 import footerImg from '../../assets/img/client/footer.png'
 import googleImg from '../../assets/img/client/google.png'
 import facebookImg from '../../assets/img/client/facebook.png'
@@ -23,11 +23,11 @@ import copyRight from '../../assets/img/client/copy-right.png'
 import {Image} from "react-bootstrap";
 const Home = (props)=>{
     const links = [
-        new ClientNav(1,"match","/Client/Match"),
-        new ClientNav(2,"tournament","/Client/Tournament"),
-        new ClientNav(3,"rule","/Client/Rule"),
-        new ClientNav(4,"BXH","/Client/BXH"),
-        new ClientNav(5,"about","/Client/About"),
+        new ClientNav(1,"match","/Match"),
+        new ClientNav(2,"tournament","/Tournament"),
+        new ClientNav(3,"rule","/Rule"),
+        new ClientNav(4,"BXH","/BXH"),
+        new ClientNav(5,"about","/About"),
         new ClientNav(6,"login","/Login")
     ]
     return (
