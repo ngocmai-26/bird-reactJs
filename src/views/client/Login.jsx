@@ -4,7 +4,8 @@ import authModel from "../../models/AuthModel";
 import {observer} from 'mobx-react'
 import { showToast } from "../../core/utils/Helper";
 import toastModel from "../../models/ToastModel";
-import { TOAST } from "../../core/utils/Contains";
+import { EMAIL_REGEX, TOAST } from "../../core/utils/Contains";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 const Login = (props)=>{
     const [email,setEmail] = useState()
@@ -23,7 +24,7 @@ const Login = (props)=>{
             return;
         }
 
-        if(!email.match(/^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/)){
+        if(!email.match(EMAIL_REGEX)){
             showToast(TOAST.ICON.ERROR,"Email incorrect format",toastModel.defaultToastOption)
             
             return;
@@ -75,7 +76,7 @@ const Login = (props)=>{
 
                         <div className="login__body--group-note">
                             <span>
-                                If you do not have an account, <a href="#" className="click-here">click here</a>  to register.
+                                If you do not have an account, <Link to={'/Register'} > click here</Link>  to register.
                             </span>
                         </div>
                     </div>

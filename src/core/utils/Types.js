@@ -48,4 +48,11 @@ export function ToastOption(toast = true,position,showConfirmButton,timer,timerP
 export function AuthToken(token){
     this.token = token;
 }
+export function RegInfo(name,email,password,phone,address){
+    this.name = name;
+    this.email = email;
+    this.password = password;
+    this.phone = phone;
+    this.address = address;
+}
 

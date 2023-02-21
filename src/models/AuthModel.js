@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx";
 import baseApi from "../core/api/BaseApi";
 import { TOAST } from "../core/utils/Contains";
 import { showToast } from "../core/utils/Helper";
-import { AuthData, LoginInfo, User } from "../core/utils/Types";
+import { AuthData, LoginInfo, RegInfo, User } from "../core/utils/Types";
 import toastModel from "./ToastModel";
 import userModel from "./UserModel";
 
@@ -58,6 +58,24 @@ class AuthModel{
     onRegister = async (regInfo)=>{
         try{
             // fetch api
+            if(regInfo instanceof RegInfo){
+
+                // send api
+                const resp = await baseApi.POST_MESSAGE("/auth/signUp",regInfo,false);
+                if(!resp.resp){
+                    if(resp.status === 400){
+                        showToast(TOAST.ICON.WANING,"This email address is already being used!",toastModel.defaultToastOption)
+                        return;
+                    }
+                    //
+                    showToast(TOAST.ICON.WANING,"Something err try later",toastModel.defaultToastOption)
+                    return;
+                }
+                // sure success
+                await this.onLogin(new LoginInfo(regInfo.email,regInfo.password))
+            }else{
+                showToast(TOAST.ICON.ERROR,"Register info incorrect format",toastModel.defaultToastOption)
+            }
         }catch(e){
 
         }

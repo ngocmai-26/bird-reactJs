@@ -1,4 +1,60 @@
+import { useState } from "react";
+import { EMAIL_REGEX, TOAST } from "../../core/utils/Contains";
+import { showToast } from "../../core/utils/Helper";
+import authModel from "../../models/AuthModel";
+import toastModel from "../../models/ToastModel";
+import { RegInfo } from "../../core/utils/Types";
 const Register = (props) => {
+
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
+  const [confirmPass,setConfirmPass] = useState("")
+  const [address,setAddress] = useState("")
+  const [phone,setPhone] = useState("")
+  const [username,setUsername] = useState()
+  const [loading,setLoading] = useState()
+  const handleRegister = async()=>{
+    // valid
+
+    if(loading){
+      return;
+    }
+    if(!email.match(EMAIL_REGEX) || email === ""){
+      showToast(TOAST.ICON.ERROR,"Email not null or incorrect format",toastModel.defaultToastOption);
+      return;
+    }
+    if(username===""){
+      showToast(TOAST.ICON.ERROR,"Username not null",toastModel.defaultToastOption);
+      return;
+    }
+    if(phone === "" || phone.length !== 10){
+      showToast(TOAST.ICON.ERROR,"Phone incorrect format",toastModel.defaultToastOption);
+      return;
+    }
+
+    if(password === "" || password.length < 8){
+      showToast(TOAST.ICON.ERROR,"Password incorrect format",toastModel.defaultToastOption);
+      return;
+    }
+    if(password!==confirmPass){
+      showToast(TOAST.ICON.ERROR,"Confirm password not matched",toastModel.defaultToastOption);
+      return;
+    }
+
+    if(address===""){
+      showToast(TOAST.ICON.ERROR,"Address not null",toastModel.defaultToastOption);
+      return;
+    }
+
+    // valid
+    setLoading(true)
+    setTimeout(async()=>{
+      const regIf = new RegInfo(username,email,password,phone,address);
+      await authModel.onRegister(regIf);
+      setLoading(false)
+    },500)
+  }
+
   return (
     <div className="client-header-bg">
       <div className="register">
@@ -11,6 +67,9 @@ const Register = (props) => {
             <div className="register__body--group-item">
               <div className="tour--info">
                 <input
+                onChange={(e)=>{
+                  setUsername(e.target.value)
+                }}
                   type="text"
                   name="Username"
                   placeholder="Username"
@@ -25,6 +84,9 @@ const Register = (props) => {
             <div className="register__body--group-item">
               <div className="tour--info">
                 <input
+                 onChange={(e)=>{
+                  setEmail(e.target.value)
+                }}
                   type="text"
                   name="Email"
                   placeholder="Email"
@@ -36,7 +98,7 @@ const Register = (props) => {
               </div>
             </div>
 
-            <div className="register__body--group-item">
+            {/* <div className="register__body--group-item">
               <div className="row">
                 <div className="col-xl-6">
                   <div className="tour--info">
@@ -66,12 +128,15 @@ const Register = (props) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="register__body--group-item">
               <div className="tour--info">
                 <input
-                  type="password"
+                 onChange={(e)=>{
+                  setPhone(e.target.value)
+                }}
+                  type="tel"
                   name="Phone"
                   placeholder="Phone"
                   className="tour--info-input"
@@ -85,7 +150,26 @@ const Register = (props) => {
             <div className="register__body--group-item">
               <div className="tour--info">
                 <input
-                  type="text"
+                 onChange={(e)=>{
+                  setPassword(e.target.value)
+                }}
+                  type="password"
+                  name="Confirm"
+                  placeholder="password"
+                  className="tour--info-input"
+                />
+                <label htmlFor="Confirm" className="tour--info-label">
+                  Password
+                </label>
+              </div>
+            </div>
+            <div className="register__body--group-item">
+              <div className="tour--info">
+                <input
+                 onChange={(e)=>{
+                  setConfirmPass(e.target.value)
+                }}
+                  type="password"
                   name="Confirm"
                   placeholder="Confirm password"
                   className="tour--info-input"
@@ -96,7 +180,7 @@ const Register = (props) => {
               </div>
             </div>
 
-            <div className="register__body--group-item">
+            {/* <div className="register__body--group-item">
               <div className="tour--info">
                 <input
                   type="date"
@@ -108,11 +192,14 @@ const Register = (props) => {
                   Birthday
                 </label>
               </div>
-            </div>
+            </div> */}
 
             <div className="register__body--group-item">
               <div className="tour--info">
                 <input
+                   onChange={(e)=>{
+                    setAddress(e.target.value)
+                  }}
                   type="text"
                   name="Address"
                   placeholder="Address"
@@ -125,7 +212,12 @@ const Register = (props) => {
             </div>
 
             <div className="register__body--group--button">
-              <button className="btn-register">Register</button>
+              <button className="btn-register" onClick={handleRegister}>
+                  {loading ? 
+                    <div className="spinner-border spinner-border-sm" role="status"></div>
+                    :"Register"    
+                  }
+              </button>
             </div>
           </div>
         </div>

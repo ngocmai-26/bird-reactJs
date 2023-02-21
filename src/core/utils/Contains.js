@@ -8,5 +8,6 @@ export const TOAST = {
         WANING:"warning"
     }
 }
+export const EMAIL_REGEX = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/
 
 /// ko duoc dung mazic number

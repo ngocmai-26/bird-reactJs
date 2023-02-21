@@ -51,6 +51,18 @@ class BaseApi{
             return false;   
         }
     }
+    POST_MESSAGE = async (uri,params = {},isConfig)=>{
+        try{
+            const resp = await axios.post(`${configs.api_base_uri}${uri}`,params,isConfig ? this.getConfig() : {});
+            if(resp.status === 200){
+                const result = resp.data;
+                return result ? result : [];
+            }
+            return {resp:false,status:resp.status};
+        }catch(e){
+            return {resp:false,message:e,status:e?.response?.status};   
+        }
+    }
 
     GET = async(uri,params = {},isConfig,isPath = false)=>{
         try{
